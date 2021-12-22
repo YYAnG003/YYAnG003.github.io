@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-12-22T09:37:18.926Z</updated>
+  <updated>2021-12-22T10:29:53.140Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java核心机制及部署</title>
+    <link href="http://example.com/2021/12/22/Java%E6%A0%B8%E5%BF%83/"/>
+    <id>http://example.com/2021/12/22/Java%E6%A0%B8%E5%BF%83/</id>
+    <published>2021-12-22T09:49:41.000Z</published>
+    <updated>2021-12-22T10:29:53.140Z</updated>
+    
+    <content type="html"><![CDATA[<p>前言：此篇文章讲述的是如何在电脑搭建Java运行环境。</p><h1 id="核心机制"><a href="#核心机制" class="headerlink" title="核心机制"></a>核心机制</h1><h2 id="常用DOS命令"><a href="#常用DOS命令" class="headerlink" title="常用DOS命令"></a>常用DOS命令</h2><h3 id="DOS操作系统"><a href="#DOS操作系统" class="headerlink" title="DOS操作系统"></a>DOS操作系统</h3><p>–Microsoft公司推出的操作系统。（在windows之前的操作系统）<br>–DOS是英文”Disk Operating System”的缩写,其中文含意是”磁盘操作系统”.<br>–DOS是单用户、单任务的操作系统.（只能执行一个任务）<br>就是大家经常用到的黑框框</p><h3 id="DOS命令"><a href="#DOS命令" class="headerlink" title="DOS命令"></a>DOS命令</h3><p>–在windows中，我们通过鼠标菜单等来操作系统，而在dos操作系统中，要通过dos命令来操作系统。<br>–是DOS操作系统的命令，是一种面向磁盘的操作命令，<br>–不区分大小写。</p><h3 id="命令学习："><a href="#命令学习：" class="headerlink" title="命令学习："></a>命令学习：</h3><p>windows给我们保留了类似dos系统的操作界面，可以直接操作磁盘！<br>dos 也是一种操作系统，是在windows出现以前用的，后来windows出来后基本没人用了，但是当windows崩溃的时候，还是要的dos方式解决，它是一种纯命令方式，cmd其实就是在windows状态下进入dos方式。<br>控制命令台：win+r—&gt;cmd<br>具体dos命令：<br>（1）切换盘符： c:  d:  e:   大小写没有区分<br>（2）显示详细信息：dir<br>（3）改变当前目录：cd +路径<br>（4）<br> . 当前目录<br> ..  代表上一层目录<br> 如：cd ..就是切换为上一级目录<br>（5）清屏：cls<br>（6）切换历史命令：上下箭头<br>（7）补全命令： tab按键<br>（8）创建目录：md，删除目录：rd +文件名<br>（9）复制文件命令：copy +文件名<br>（10）删除文件：del +文件名<br>del后面如果接的是文件夹/目录：那么删除的就是这个文件夹下的文件，而不是文件夹<br>以上都是一些常用的DOS命令，在Linux系统和Mac中经常用到类似的命令，熟能生巧</p><h2 id="Java环境准备–-gt-装JDK"><a href="#Java环境准备–-gt-装JDK" class="headerlink" title="Java环境准备–&gt;装JDK"></a>Java环境准备–&gt;装JDK</h2><p>【1】下载JDK<br>Orcel官网中下载对应自己计算机操作系统的安装包：<a class="link"   href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" >www.oracle.com/technetwork/java/javase/downloads/index.html<i class="fas fa-external-link-alt"></i></a><br>【2】安装JDK<br>选好安装路径，以后用Idea或者Eclipse配置时候需要用到JDK的路径，其他下一步即可。<br>【3】卸载JDK<br>控制面板卸载即可<br>【4】 验证JDK是否安装成功<br>在桌面上按windows+r然后输入cmd打开命令行然后输入：java -version<br>若出现JDK版本就是安装成功了。<br>【5】JDK和JRE：<br>安装时候会安装JDK和JRE<br>区别如下：<br>JDK： Java Development kit   —-&gt;编写Java程序的程序员使用的软件<br>JRE : Java Runtime Enviroment  —-》运行Java程序的用户使用的软件<br>简单说就是只安装JRE就可以运行Java的程序但是不能进行编写。<br>【6】配置环境变量path<br>1.打开我的电脑属性选项<br>2.左边菜单打开高级系统选项，然后打开环境变量<br>3.新建环境变量叫：classpath 变量值为：.<br>如：变量名：classpath<br>   变量值：.<br>classpath作用：只要你配置到classpath中的路径，在执行java的字节码文件的时候，就会去这个配置的路径下找对应的字节码文件，而写了.\就可以全局运行Java了<br>4.新建环境变量：JAVA_HOME:和上一步一样新建然后变量名输入JAVA_HOME，变量值为JDK的安装目录<br>如：变量名：JAVA_HOME<br>   变量值：C:\Program Files\Java\jdk1.8.0_151<br>这个环境变量是为了之后运行tomcat用的<br>5.在path环境变量中加入自己安装JDK的路径加\bin<br>如：C:\Program Files\Java\jdk1.8.0_151\bin<br>也可以新建一个path环境变量然后输入路径+\bin<br>至此我们电脑的Java的运行环境算是配好了</p><h1 id="API文档"><a href="#API文档" class="headerlink" title="API文档"></a>API文档</h1><p>JDK帮助文档<br>SUN公司为JDK工具包提供了一整套文档资料,我们习惯上称之为JDK文档。<br>JDK文档中提供了Java中的各种技术的详细资料,以及JDK中提供的各种类的帮助说明。<br>JDk文档是Java语言的完整说明,大多数书籍中的类的介绍都要参照它来完成,它是编程者经常查阅的资料<br>如何理解API：就当做是一个“字典”，“使用手册”，API就相当于是一个电子的帮助文档，可以帮我们查看JDK提供的类的信息，平时查看的时候可结合百度一起看。<br>其实API没有什么神奇的，就是一个电子文档而已，帮助我们查看JAVA中涉及到的一些技能点。</p><h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1><p>现在我们开始写我们的第一段代码了，实现一个输出HelloWorld的功能<br>在任意位置建一个文件夹，起名为Java，然后在文件夹下新建一个txt文档，起名为HelloWorld.java。<br>打开文档输入：<br>public class HelloWorld{<br>        public static void main(String[] args){<br>                System.out.println(“hi 这是一段Java程序。。。”);<br>        }<br>}<br>然后保存。<br>打开我们的命令行，输入cd：java文件夹路径，进到我们这个文件夹里面。<br>输入javac HelloWorld.java对我们写的java文件进行编译。编译完之后在文件夹下面会出现一个.class文件就编译好的文件。<br>输入java HelloWorld运行程序<br>在命令行中出现HelloWorld就成功了。<br>注意：在写代码的时候要注意区分中英文的符号，所有符号必须是英文格式的，不然会出现编译错误。<br>     我们的文件名和类名必须是一样的，不然也会出现编译错误。<br>    编写代码时要注意格式排版，养成习惯，以后方便查看代码和BUG。</p><h1 id="小练习：输出一个人的个人信息"><a href="#小练习：输出一个人的个人信息" class="headerlink" title="小练习：输出一个人的个人信息"></a>小练习：输出一个人的个人信息</h1><p>要求：在命令行中输出姓名，年龄，职业，身高，体重。<br>代码如下：<br>public class HiWorld{<br>        public static void main(String[] args){<br>                //进行自我介绍：<br>                System.out.println(“姓名:”);<br>                System.out.println(“丽丽”);<br>                System.out.println(“职业:”);<br>                System.out.println(“学生”);<br>                System.out.println(“身高:”);<br>                System.out.println(“180”);<br>                System.out.println(“体重:”);<br>                System.out.println(“130”);</p><pre><code>    &#125;</code></pre><p>}</p><h1 id="扩展：JDK、JRE、JVM的区别"><a href="#扩展：JDK、JRE、JVM的区别" class="headerlink" title="扩展：JDK、JRE、JVM的区别"></a>扩展：JDK、JRE、JVM的区别</h1><p>JDK和JRE的区别<br>初学JAVA很容易被其中的很多概念弄的傻傻分不清楚，首先从概念上理解一下吧，JDK（Java Development Kit）简单理解就是Java开发工具包，JRE(Java Runtime Enviroment)是Java的运行环境，JVM( java virtual machine)也就是常常听到Java虚拟机。JDK是面向开发者的，JRE是面向使用JAVA程序的用户。</p><p>JRE和JVM的区别<br>JVM – java virtual machineJVM就是我们常说的java虚拟机，它是整个java实现跨平台的最核心的部分，所有的java程序会首先被编译为.class的类文件，这种类文件可以在虚拟机上执行，class文件并不直接与机器的操作系统相对应，而是经过虚拟机间接与操作系统交互，由虚拟机将程序解释给本地系统执行，类似于C#中的CLR。<br>JVM不能单独搞定class的执行，解释class的时候JVM需要调用解释所需要的类库lib。在JDK下面的的jre目录里面有两个文件夹bin和lib,在这里可以认为bin里的就是jvm，lib中则是jvm工作所需要的类库，而jvm和 lib和起来就称为jre。<br>JVM+Lib=JRE，如果讲的具体点就是bin目录下的jvm.dll文件， jvm.dll无法单独工作，当jvm.dll启动后，会使用explicit的方法(就是使用Win32 API之中的LoadLibrary()与GetProcAddress()来载入辅助用的动态链接库)，而这些辅助用的动态链接库(.dll)都必须位 于jvm.dll所在目录的父目录之中。因此想使用哪个JVM，只需要设置PATH，指向JRE所在目录下的jvm.dll。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;前言：此篇文章讲述的是如何在电脑搭建Java运行环境。&lt;/p&gt;
+&lt;h1 id=&quot;核心机制&quot;&gt;&lt;a href=&quot;#核心机制&quot; class=&quot;headerlink&quot; title=&quot;核心机制&quot;&gt;&lt;/a&gt;核心机制&lt;/h1&gt;&lt;h2 id=&quot;常用DOS命令&quot;&gt;&lt;a href=&quot;#常用D</summary>
+      
+    
+    
+    
+    <category term="Java" scheme="http://example.com/categories/Java/"/>
+    
+    
+    <category term="Java" scheme="http://example.com/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>Java介绍</title>

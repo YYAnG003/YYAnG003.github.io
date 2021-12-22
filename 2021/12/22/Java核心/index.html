@@ -9,7 +9,7 @@
     
     <title>
         
-            Java介绍 |
+            Java核心机制及部署 |
         
         Abner&#39;s Blog
     </title>
@@ -171,7 +171,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">Java介绍</span>
+            <span class="title-hover-animation">Java核心机制及部署</span>
         </div>
 
         
@@ -190,8 +190,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2021-12-22 17:23:53</span>
-        <span class="mobile">2021-12-22 17:23</span>
+        <span class="pc">2021-12-22 17:49:41</span>
+        <span class="mobile">2021-12-22 17:49</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -221,7 +221,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>3.1k Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.9k Words</span>
         </span>
     
     
@@ -238,24 +238,19 @@
         
 
         <div class="article-content markdown-body">
-            <p>前言：此篇文章包括Java的发展史、Java结构和JAVA的特性优势，发展史有过了解即可，Java的结构和特性优势要搞明白，为什么Java一直处于计算机语言的主流地位，Java与其他语言的区别在哪，这对我们以后的项目也有很大的好处。</p>
-<h1 id="Java简史"><a href="#Java简史" class="headerlink" title="Java简史"></a>Java简史</h1><h2 id="Java发明人"><a href="#Java发明人" class="headerlink" title="Java发明人"></a>Java发明人</h2><p>James  Gosling</p>
-<h2 id="SUN公司"><a href="#SUN公司" class="headerlink" title="SUN公司"></a>SUN公司</h2><p>SUN公司<br>美国SUN(Stanford University Network)公司<br>在中国大陆的正式中文名为“太阳计算机系统（中国）有限公司”<br>在台湾中文名为“升 阳电脑公司”。</p>
-<h3 id="Java发明的缘由"><a href="#Java发明的缘由" class="headerlink" title="Java发明的缘由"></a>Java发明的缘由</h3><p>Java为什么被发明<br>Green项目。<br>应用环境：像电视盒这样的消费类电子产品<br>要求： 语言本身是中立的，也就是跨平台<br>        1996年Java第一次发布就引起了人们的极大兴趣。关注Java的人士不仅限于计算机出版界，  还有诸如《纽约时报》《华盛顿邮报》《商业周刊》这样的主流媒体。Java 是第一种也是唯一种在National Public Radio上占用了10分钟时间来进行介绍的程序设计语言，并且还得到了$100000000的风险投资基金。这些基金全部用来支持用这种特别的计算机语言开发的产品。重温那些令人兴奋的日子是很有意思的。我们将简要地介绍一下Java语言的发展历史：<br>        Java的历史要追溯到1991年，由Patrick Naughton 及其伙伴James Gosling (一个全能的计算机奇才)带领的Sun公同的工程师小组想要设计一种小型的计算机语言，主要用于像有线电视转换盒这类的消费设备。由于这些消费设备的处理能力和内存都很有限，所以语言必须非常小且能够生成非常紧凑的代码。另外，由于不同的厂商会选择不同的中央处理器(CPU)，因此这种语言的关键是不能与任何特定的体系结构捆绑在一起。这个项目被命名为”Green”。<br>        所有就要求有这样的一种代码： 代码短小、紧凑且与平台无关。但是，Sun公司的人都有UNIX的应用背景。因此，所开发的语言以C++为基础。 是Gosling率先创造了这个语言，把这种语言称为“Oak”(这么起名的原因大概是因为他非常喜欢自己办公室外的橡树)。Sun 公司的人后来发现Oak是一种已有的计算机语言的名字，于是，将其改名为Java。</p>
-<h2 id="历程"><a href="#历程" class="headerlink" title="历程"></a>历程</h2><p>经历阶段<br>1991年，James Gosling在SUN公司的工程师小组想要设计这样一种小型计算机语言。该语言主要用于像电视盒这样的消费类电子产品。另外，由于不同的厂商选择不同的CPU和操作系统，因此，要求该语言不能和特定的体系结构绑在一起，要求语言本身是中立的，也就是跨平台的。所以，将这个语言命名为“Green”，类似于绿色软件的意思。后来，改名为Oak，橡树的意思。改名后发现已经有一种语言叫这个名字了，再改名叫Java。Java语言发展到今天经历了一系列的过程：<br>–1991年，SUN公司的Green项目，Oak<br>–1995年，推出Java测试版<br>–1996年，JDK1.0<br>–1997年，JDK1.1<br>–1998年，JDK1.2，大大改进了早期版本缺陷，是一个革命性的版本，更名为Java2。<br>–2004年，J2SE 5.0 (1.5.0)  Tiger老虎 成为Java语言发展史上的又一里程碑。为了表示该版本的重要性，J2SE1.5更名为Java SE 5.0<br>–2005年，Java的各种版本已经更名，以取消其中的数字”2”： J2ME更名为Java ME， J2SE更名为Java SE， J2EE更名为Java EE；<br>–2006年，J2SE 6.0 (1.6.0)  Mustang野马<br>–2009年，甲骨文(oracle)收购SUN，交易高达价格74亿<br>–2011年，JavaSE7.0   Dolphin海豚<br>–2014年，JavaSE8.0<br>–2017年，JAVA 9.0<br>–2018年3月，JAVA 10<br>–2018年9月，JAVA 11<br>–2019年3月，JAVA 12<br>–2019年9月，JAVA 13<br>–2020年3月，JAVA 14<br>现在SUN公司已经被oracle公司收购，目前每半年更新一次java的版本。但是，企业中的主流仍然以7和8为主。对于初学者，应该以企业主流应用版本为核心进行学习，没有必须在此处追求最新版本。</p>
-<h2 id="不同版本JDK说明"><a href="#不同版本JDK说明" class="headerlink" title="不同版本JDK说明"></a>不同版本JDK说明</h2><p>JDK说明<br>JDK Version 1.1<br>   于1997-02-19发行。<br>   引入的新特性包括：<br>   引入JDBC（Java Database Connectivity）；<br>   支持内部类；<br>   引入Java Bean；<br>   引入RMI（Remote Method Invocation）；<br>   引入反射（仅用于内省）。<br>J2SE Version 1.2<br>   开发代号为Playground（操场），于1998-12-08发行。<br>   引入的新特性包括：<br>   引入集合（Collection）框架；<br>   对字符串常量做内存映射；<br>   引入JIT（Just In Time）编译器；<br>   引入对打包的Java文件进行数字签名；<br>   引入控制授权访问系统资源的策略工具；<br>   引入JFC（Java Foundation Classes），包括Swing 1.0、拖放和Java 2D类库；<br>   引入Java 插件；<br>   在JDBC中引入可滚动结果集、BLOB、CLOB、批量更新和用户自定义类型；<br>   在Applet中添加声音支持。<br>J2SE Version 1.3<br>  开发代号为Kestrel（红隼），于2000-05-08发行。<br>   引入的新特性包括：<br>   引入Java Sound API；<br>   jar文件索引；<br>   对Java的各个方面都做了大量优化和增强。<br>J2SE Version 1.4<br>   开发代号为Merlin（隼），于2004-02-06发行（首次在JCP下发行）。<br>   引入的新特性包括:<br>   XML处理；<br>   Java打印服务；<br>   引入Logging API；<br>   引入Java Web Start；<br>   引入JDBC 3.0 API；<br>   引入断言；<br>   引入Preferences API；<br>   引入链式异常处理；<br>   支持IPv6；<br>   支持正则表达式；<br>   引入Image I/O slot machine API。<br>Java Version SE 5.0<br>   开发代号为Tiger（老虎），于2004-09-30发行。<br>   引入的新特性包括:<br>   引入泛型；<br>   增强循环，可以使用迭代方式；<br>   自动装箱与自动拆箱；<br>   类型安全的枚举；<br>   可变参数；<br>   静态引入；<br>   元数据（注解）；<br>   引入Instrumentation。<br>Java Version SE 6<br>   开发代号为Mustang（野马），于2006-12-11发行。<br>   引入的新特性包括：<br>   支持脚本语言；<br>   引入JDBC 4.0 API；<br>   引入Java Compiler API；<br>   可插拔注解；<br>   增加对Native PKI(Public Key Infrastructure)、Java GSS(Generic Security Service)、Kerberos和LDAP(Lightweight Directory Access   Protocol)的支持；<br>   继承Web Services；<br>   做了很多优化。<br>Java Version SE 7<br>   开发代号是Dolphin（海豚），于2011-07-28发行。<br>   引入的新特性包括：<br>   switch语句块中允许以字符串作为分支条件；<br>   在创建泛型对象时应用类型推断；<br>   在一个语句块中捕获多种异常；<br>   支持动态语言；<br>   支持try-with-resources；<br>   引入Java NIO.2开发包；<br>   数值类型可以用2进制字符串表示，并且可以在字符串表示中添加下划线；<br>   钻石型语法；<br>   null值的自动处理。<br>Java Version SE 8<br>   开发代号是Spider（蜘蛛），于2014-03-18发行。<br>   支持 lambda支持；<br>   增强日期与时间API的功能；<br>   对垃圾回收的性能也进行了改进；<br>   并且移除了permgen区。<br>   Lambdas表达式与Functional接口<br>   接口的默认与静态方法<br>   方法引用<br>   重复注解<br>   更好的类型推测机制<br>   扩展注解的支持</p>
-<h1 id="Java体系结构"><a href="#Java体系结构" class="headerlink" title="Java体系结构"></a>Java体系结构</h1><h2 id="JavaSE"><a href="#JavaSE" class="headerlink" title="JavaSE"></a>JavaSE</h2><p>JavaSE（Java  Standard  Edition）：标准版，定位在个人计算机上的应用<br>这个版本是Java平台的核心，它提供了非常丰富的API来开发一般个人计算机上的应用程序，包括用户界面接口AWT及Swing，网络功能与国际化、图像处理能力以及输入输出支持等。在上世纪90年代末互联网上大放异彩的Applet也属于这个版本。Applet后来为Flash取代，Flash即将被HTML5取代。</p>
-<h2 id="JavaEE"><a href="#JavaEE" class="headerlink" title="JavaEE"></a>JavaEE</h2><p>JavaEE（Java  Enterprise Edition）：企业版，定位在服务器端的应用<br>JavaEE是JavaSE的扩展，增加了用于服务器开发的类库。如：JDBC是让程序员能直接在Java内使用的SQL的语法来访问数据库内的数据；Servlet能够延伸服务器的功能，通过请求-响应的模式来处理客户端的请求；JSP是一种可以将Java程序代码内嵌在网页内的技术；</p>
-<h2 id="JavaME"><a href="#JavaME" class="headerlink" title="JavaME"></a>JavaME</h2><p>JavaME（Java  Micro  Edition）：微型版，定位在消费性电子产品的应用上<br>JavaME是JavaSE的内伸，包含J2SE的一部分核心类，也有自己的扩展类,增加了适合微小装置的类库：javax.microedition.io.*等。该版本针对资源有限的电子消费产品的需求精简核心类库，并提供了模块化的架构让不同类型产品能够随时增加支持的能力。</p>
-<h1 id="Java特性和优势"><a href="#Java特性和优势" class="headerlink" title="Java特性和优势"></a>Java特性和优势</h1><p>跨平台/可移植性<br>这是Java的核心优势。Java在设计时就很注重移植和跨平台性。比如：Java的int永远都是32位。不像C++可能是16，32，可能是根据编译器厂商规定的变化。这样的话程序的移植就会非常麻烦。</p>
-<p>1.安全性<br>Java适合于网络/分布式环境，为了达到这个目标，在安全性方面投入了很大的精力，使Java可以很容易构建防病毒，防篡改的系统。</p>
-<p>2.面向对象<br>面向对象是一种程序设计技术，非常适合大型软件的设计和开发。由于C++为了照顾大量C语言使用者而兼容了C，使得自身仅仅成为了带类的C语言，多少影响了其面向对象的彻底性！Java则是完全的面向对象语言。</p>
-<p>3.简单性<br>Java就是C++语法的简化版，我们也可以将Java称之为“C++-”。跟我念“C加加减”，指的就是将C++的一些内容去掉；比如：头文件，指针运算，结构，联合，操作符重载，虚基类等等。同时，由于语法基于C语言，因此学习起来完全不费力。</p>
-<p>4.高性能<br>Java最初发展阶段，总是被人诟病“性能低”；客观上，高级语言运行效率总是低于低级语言的，这个无法避免。Java语言本身发展中通过虚拟机的优化提升了几十倍运行效率。比如，通过JIT(JUST IN TIME)即时编译技术提高运行效率。 将一些“热点”字节码编译成本地机器码，并将结果缓存起来，在需要的时候重新调用。这样的话，使Java程序的执行效率大大提高，某些代码甚至接待C++的效率。<br>因此，Java低性能的短腿，已经被完全解决了。业界发展上，我们也看到很多C++应用转到Java开发，很多C++程序员转型为Java程序员。</p>
-<p>5.分布式<br>Java是为Internet的分布式环境设计的，因为它能够处理TCP/IP协议。事实上，通过URL访问一个网络资源和访问本地文件是一样简单的。Java还支持远程方法调用(RMI,Remote Method Invocation)，使程序能够通过网络调用方法。</p>
-<p>6.多线程<br>多线程的使用可以带来更好的交互响应和实时行为。 Java多线程的简单性是Java成为主流服务器端开发语言的主要原因之一。</p>
-<p>7.健壮性<br>Java是一种健壮的语言，吸收了C/C++ 语言的优点，但去掉了其影响程序健壮性的部分（如：指针、内存的申请与释放等）。Java程序不可能造成计算机崩溃。即使Java程序也可能有错误。如果出现某种出乎意料之事，程序也不会崩溃，而是把该异常抛出，再通过异常处理机制加以处理。</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>一句话：Java很好！<br>但是，并不是说学习了java，以后所有的东西都要用java开发了：某些领域其他语言有更出色的表现，比如，Objective C和后来的Swift在iOS设备上就有着无可取代的地位。浏览器中的处理几乎完全由JavaScript掌控。Windows程序通常都用C++或C#编写。Java在服务器端编程和跨平台客户端应用领域则很有优势。<br>只能说，不同语言之前，有各自的优势，主要看具体是要做什么项目，其实也是平分秋色的。</p>
+            <p>前言：此篇文章讲述的是如何在电脑搭建Java运行环境。</p>
+<h1 id="核心机制"><a href="#核心机制" class="headerlink" title="核心机制"></a>核心机制</h1><h2 id="常用DOS命令"><a href="#常用DOS命令" class="headerlink" title="常用DOS命令"></a>常用DOS命令</h2><h3 id="DOS操作系统"><a href="#DOS操作系统" class="headerlink" title="DOS操作系统"></a>DOS操作系统</h3><p>–Microsoft公司推出的操作系统。（在windows之前的操作系统）<br>–DOS是英文”Disk Operating System”的缩写,其中文含意是”磁盘操作系统”.<br>–DOS是单用户、单任务的操作系统.（只能执行一个任务）<br>就是大家经常用到的黑框框</p>
+<h3 id="DOS命令"><a href="#DOS命令" class="headerlink" title="DOS命令"></a>DOS命令</h3><p>–在windows中，我们通过鼠标菜单等来操作系统，而在dos操作系统中，要通过dos命令来操作系统。<br>–是DOS操作系统的命令，是一种面向磁盘的操作命令，<br>–不区分大小写。</p>
+<h3 id="命令学习："><a href="#命令学习：" class="headerlink" title="命令学习："></a>命令学习：</h3><p>windows给我们保留了类似dos系统的操作界面，可以直接操作磁盘！<br>dos 也是一种操作系统，是在windows出现以前用的，后来windows出来后基本没人用了，但是当windows崩溃的时候，还是要的dos方式解决，它是一种纯命令方式，cmd其实就是在windows状态下进入dos方式。<br>控制命令台：win+r—&gt;cmd<br>具体dos命令：<br>（1）切换盘符： c:  d:  e:   大小写没有区分<br>（2）显示详细信息：dir<br>（3）改变当前目录：cd +路径<br>（4）<br> . 当前目录<br> ..  代表上一层目录<br> 如：cd ..就是切换为上一级目录<br>（5）清屏：cls<br>（6）切换历史命令：上下箭头<br>（7）补全命令： tab按键<br>（8）创建目录：md，删除目录：rd +文件名<br>（9）复制文件命令：copy +文件名<br>（10）删除文件：del +文件名<br>del后面如果接的是文件夹/目录：那么删除的就是这个文件夹下的文件，而不是文件夹<br>以上都是一些常用的DOS命令，在Linux系统和Mac中经常用到类似的命令，熟能生巧</p>
+<h2 id="Java环境准备–-gt-装JDK"><a href="#Java环境准备–-gt-装JDK" class="headerlink" title="Java环境准备–&gt;装JDK"></a>Java环境准备–&gt;装JDK</h2><p>【1】下载JDK<br>Orcel官网中下载对应自己计算机操作系统的安装包：<a class="link"   target="_blank" rel="noopener" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" >www.oracle.com/technetwork/java/javase/downloads/index.html<i class="fas fa-external-link-alt"></i></a><br>【2】安装JDK<br>选好安装路径，以后用Idea或者Eclipse配置时候需要用到JDK的路径，其他下一步即可。<br>【3】卸载JDK<br>控制面板卸载即可<br>【4】 验证JDK是否安装成功<br>在桌面上按windows+r然后输入cmd打开命令行然后输入：java -version<br>若出现JDK版本就是安装成功了。<br>【5】JDK和JRE：<br>安装时候会安装JDK和JRE<br>区别如下：<br>JDK： Java Development kit   —-&gt;编写Java程序的程序员使用的软件<br>JRE : Java Runtime Enviroment  —-》运行Java程序的用户使用的软件<br>简单说就是只安装JRE就可以运行Java的程序但是不能进行编写。<br>【6】配置环境变量path<br>1.打开我的电脑属性选项<br>2.左边菜单打开高级系统选项，然后打开环境变量<br>3.新建环境变量叫：classpath 变量值为：.<br>如：变量名：classpath<br>   变量值：.<br>classpath作用：只要你配置到classpath中的路径，在执行java的字节码文件的时候，就会去这个配置的路径下找对应的字节码文件，而写了.\就可以全局运行Java了<br>4.新建环境变量：JAVA_HOME:和上一步一样新建然后变量名输入JAVA_HOME，变量值为JDK的安装目录<br>如：变量名：JAVA_HOME<br>   变量值：C:\Program Files\Java\jdk1.8.0_151<br>这个环境变量是为了之后运行tomcat用的<br>5.在path环境变量中加入自己安装JDK的路径加\bin<br>如：C:\Program Files\Java\jdk1.8.0_151\bin<br>也可以新建一个path环境变量然后输入路径+\bin<br>至此我们电脑的Java的运行环境算是配好了</p>
+<h1 id="API文档"><a href="#API文档" class="headerlink" title="API文档"></a>API文档</h1><p>JDK帮助文档<br>SUN公司为JDK工具包提供了一整套文档资料,我们习惯上称之为JDK文档。<br>JDK文档中提供了Java中的各种技术的详细资料,以及JDK中提供的各种类的帮助说明。<br>JDk文档是Java语言的完整说明,大多数书籍中的类的介绍都要参照它来完成,它是编程者经常查阅的资料<br>如何理解API：就当做是一个“字典”，“使用手册”，API就相当于是一个电子的帮助文档，可以帮我们查看JDK提供的类的信息，平时查看的时候可结合百度一起看。<br>其实API没有什么神奇的，就是一个电子文档而已，帮助我们查看JAVA中涉及到的一些技能点。</p>
+<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1><p>现在我们开始写我们的第一段代码了，实现一个输出HelloWorld的功能<br>在任意位置建一个文件夹，起名为Java，然后在文件夹下新建一个txt文档，起名为HelloWorld.java。<br>打开文档输入：<br>public class HelloWorld{<br>        public static void main(String[] args){<br>                System.out.println(“hi 这是一段Java程序。。。”);<br>        }<br>}<br>然后保存。<br>打开我们的命令行，输入cd：java文件夹路径，进到我们这个文件夹里面。<br>输入javac HelloWorld.java对我们写的java文件进行编译。编译完之后在文件夹下面会出现一个.class文件就编译好的文件。<br>输入java HelloWorld运行程序<br>在命令行中出现HelloWorld就成功了。<br>注意：在写代码的时候要注意区分中英文的符号，所有符号必须是英文格式的，不然会出现编译错误。<br>     我们的文件名和类名必须是一样的，不然也会出现编译错误。<br>    编写代码时要注意格式排版，养成习惯，以后方便查看代码和BUG。</p>
+<h1 id="小练习：输出一个人的个人信息"><a href="#小练习：输出一个人的个人信息" class="headerlink" title="小练习：输出一个人的个人信息"></a>小练习：输出一个人的个人信息</h1><p>要求：在命令行中输出姓名，年龄，职业，身高，体重。<br>代码如下：<br>public class HiWorld{<br>        public static void main(String[] args){<br>                //进行自我介绍：<br>                System.out.println(“姓名:”);<br>                System.out.println(“丽丽”);<br>                System.out.println(“职业:”);<br>                System.out.println(“学生”);<br>                System.out.println(“身高:”);<br>                System.out.println(“180”);<br>                System.out.println(“体重:”);<br>                System.out.println(“130”);</p>
+<pre><code>    &#125;
+</code></pre>
+<p>}</p>
+<h1 id="扩展：JDK、JRE、JVM的区别"><a href="#扩展：JDK、JRE、JVM的区别" class="headerlink" title="扩展：JDK、JRE、JVM的区别"></a>扩展：JDK、JRE、JVM的区别</h1><p>JDK和JRE的区别<br>初学JAVA很容易被其中的很多概念弄的傻傻分不清楚，首先从概念上理解一下吧，JDK（Java Development Kit）简单理解就是Java开发工具包，JRE(Java Runtime Enviroment)是Java的运行环境，JVM( java virtual machine)也就是常常听到Java虚拟机。JDK是面向开发者的，JRE是面向使用JAVA程序的用户。</p>
+<p>JRE和JVM的区别<br>JVM – java virtual machineJVM就是我们常说的java虚拟机，它是整个java实现跨平台的最核心的部分，所有的java程序会首先被编译为.class的类文件，这种类文件可以在虚拟机上执行，class文件并不直接与机器的操作系统相对应，而是经过虚拟机间接与操作系统交互，由虚拟机将程序解释给本地系统执行，类似于C#中的CLR。<br>JVM不能单独搞定class的执行，解释class的时候JVM需要调用解释所需要的类库lib。在JDK下面的的jre目录里面有两个文件夹bin和lib,在这里可以认为bin里的就是jvm，lib中则是jvm工作所需要的类库，而jvm和 lib和起来就称为jre。<br>JVM+Lib=JRE，如果讲的具体点就是bin目录下的jvm.dll文件， jvm.dll无法单独工作，当jvm.dll启动后，会使用explicit的方法(就是使用Win32 API之中的LoadLibrary()与GetProcAddress()来载入辅助用的动态链接库)，而这些辅助用的动态链接库(.dll)都必须位 于jvm.dll所在目录的父目录之中。因此想使用哪个JVM，只需要设置PATH，指向JRE所在目录下的jvm.dll。</p>
 
         </div>
 
@@ -263,11 +258,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：Java介绍</li>
+        <li>Post title：Java核心机制及部署</li>
         <li>Post author：Abner</li>
-        <li>Create time：2021-12-22 17:23:53</li>
+        <li>Create time：2021-12-22 17:49:41</li>
         <li>
-            Post link：YYAnG003.github.io/2021/12/22/Java/
+            Post link：YYAnG003.github.io/2021/12/22/Java核心/
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
@@ -291,29 +286,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/12/22/Java%E6%A0%B8%E5%BF%83/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">Java核心机制及部署</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/12/22/%E7%AE%80%E4%BB%8B/"
+                           href="/2021/12/22/Java/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">博客简介</span>
+                                <span class="post-nav-title-item">Java介绍</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -522,7 +502,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java%E7%AE%80%E5%8F%B2"><span class="nav-number">1.</span> <span class="nav-text">Java简史</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java%E5%8F%91%E6%98%8E%E4%BA%BA"><span class="nav-number">1.1.</span> <span class="nav-text">Java发明人</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SUN%E5%85%AC%E5%8F%B8"><span class="nav-number">1.2.</span> <span class="nav-text">SUN公司</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java%E5%8F%91%E6%98%8E%E7%9A%84%E7%BC%98%E7%94%B1"><span class="nav-number">1.2.1.</span> <span class="nav-text">Java发明的缘由</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%86%E7%A8%8B"><span class="nav-number">1.3.</span> <span class="nav-text">历程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%ACJDK%E8%AF%B4%E6%98%8E"><span class="nav-number">1.4.</span> <span class="nav-text">不同版本JDK说明</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">Java体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaSE"><span class="nav-number">2.1.</span> <span class="nav-text">JavaSE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaEE"><span class="nav-number">2.2.</span> <span class="nav-text">JavaEE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaME"><span class="nav-number">2.3.</span> <span class="nav-text">JavaME</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java%E7%89%B9%E6%80%A7%E5%92%8C%E4%BC%98%E5%8A%BF"><span class="nav-number">3.</span> <span class="nav-text">Java特性和优势</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%9C%BA%E5%88%B6"><span class="nav-number">1.</span> <span class="nav-text">核心机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8DOS%E5%91%BD%E4%BB%A4"><span class="nav-number">1.1.</span> <span class="nav-text">常用DOS命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOS%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.1.1.</span> <span class="nav-text">DOS操作系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOS%E5%91%BD%E4%BB%A4"><span class="nav-number">1.1.2.</span> <span class="nav-text">DOS命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%EF%BC%9A"><span class="nav-number">1.1.3.</span> <span class="nav-text">命令学习：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87%E2%80%93-gt-%E8%A3%85JDK"><span class="nav-number">1.2.</span> <span class="nav-text">Java环境准备–&gt;装JDK</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#API%E6%96%87%E6%A1%A3"><span class="nav-number">2.</span> <span class="nav-text">API文档</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hello-World"><span class="nav-number">3.</span> <span class="nav-text">Hello World</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%8F%E7%BB%83%E4%B9%A0%EF%BC%9A%E8%BE%93%E5%87%BA%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%9A%84%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF"><span class="nav-number">4.</span> <span class="nav-text">小练习：输出一个人的个人信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%EF%BC%9AJDK%E3%80%81JRE%E3%80%81JVM%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">5.</span> <span class="nav-text">扩展：JDK、JRE、JVM的区别</span></a></li></ol>
     </div>
 </div>
         </aside>
