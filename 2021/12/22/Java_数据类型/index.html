@@ -9,7 +9,7 @@
     
     <title>
         
-            Java核心机制及部署 |
+            数据类型 |
         
         Abner&#39;s Blog
     </title>
@@ -171,7 +171,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">Java核心机制及部署</span>
+            <span class="title-hover-animation">数据类型</span>
         </div>
 
         
@@ -190,8 +190,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2021-12-22 17:49:41</span>
-        <span class="mobile">2021-12-22 17:49</span>
+        <span class="pc">2021-12-22 21:19:47</span>
+        <span class="mobile">2021-12-22 21:19</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -211,7 +211,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/Java/">Java</a>&nbsp;
+                        <a href="/tags/Java-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">Java_数据类型</a>&nbsp;
                     </li>
                 
             </ul>
@@ -221,7 +221,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>1.9k Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>627 Words</span>
         </span>
     
     
@@ -238,19 +238,20 @@
         
 
         <div class="article-content markdown-body">
-            <p>前言：此篇文章讲述的是如何在电脑搭建Java运行环境。</p>
-<h1 id="核心机制"><a href="#核心机制" class="headerlink" title="核心机制"></a>核心机制</h1><h2 id="常用DOS命令"><a href="#常用DOS命令" class="headerlink" title="常用DOS命令"></a>常用DOS命令</h2><h3 id="DOS操作系统"><a href="#DOS操作系统" class="headerlink" title="DOS操作系统"></a>DOS操作系统</h3><p>–Microsoft公司推出的操作系统。（在windows之前的操作系统）<br>–DOS是英文”Disk Operating System”的缩写,其中文含意是”磁盘操作系统”.<br>–DOS是单用户、单任务的操作系统.（只能执行一个任务）<br>就是大家经常用到的黑框框</p>
-<h3 id="DOS命令"><a href="#DOS命令" class="headerlink" title="DOS命令"></a>DOS命令</h3><p>–在windows中，我们通过鼠标菜单等来操作系统，而在dos操作系统中，要通过dos命令来操作系统。<br>–是DOS操作系统的命令，是一种面向磁盘的操作命令，<br>–不区分大小写。</p>
-<h3 id="命令学习："><a href="#命令学习：" class="headerlink" title="命令学习："></a>命令学习：</h3><p>windows给我们保留了类似dos系统的操作界面，可以直接操作磁盘！<br>dos 也是一种操作系统，是在windows出现以前用的，后来windows出来后基本没人用了，但是当windows崩溃的时候，还是要的dos方式解决，它是一种纯命令方式，cmd其实就是在windows状态下进入dos方式。<br>控制命令台：win+r—&gt;cmd<br>具体dos命令：<br>（1）切换盘符： c:  d:  e:   大小写没有区分<br>（2）显示详细信息：dir<br>（3）改变当前目录：cd +路径<br>（4）<br> . 当前目录<br> ..  代表上一层目录<br> 如：cd ..就是切换为上一级目录<br>（5）清屏：cls<br>（6）切换历史命令：上下箭头<br>（7）补全命令： tab按键<br>（8）创建目录：md，删除目录：rd +文件名<br>（9）复制文件命令：copy +文件名<br>（10）删除文件：del +文件名<br>del后面如果接的是文件夹/目录：那么删除的就是这个文件夹下的文件，而不是文件夹<br>以上都是一些常用的DOS命令，在Linux系统和Mac中经常用到类似的命令，熟能生巧</p>
-<h2 id="Java环境准备–-gt-装JDK"><a href="#Java环境准备–-gt-装JDK" class="headerlink" title="Java环境准备–&gt;装JDK"></a>Java环境准备–&gt;装JDK</h2><p>【1】下载JDK<br>Orcel官网中下载对应自己计算机操作系统的安装包：<a class="link"   target="_blank" rel="noopener" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" >www.oracle.com/technetwork/java/javase/downloads/index.html<i class="fas fa-external-link-alt"></i></a><br>【2】安装JDK<br>选好安装路径，以后用Idea或者Eclipse配置时候需要用到JDK的路径，其他下一步即可。<br>【3】卸载JDK<br>控制面板卸载即可<br>【4】 验证JDK是否安装成功<br>在桌面上按windows+r然后输入cmd打开命令行然后输入：java -version<br>若出现JDK版本就是安装成功了。<br>【5】JDK和JRE：<br>安装时候会安装JDK和JRE<br>区别如下：<br>JDK： Java Development kit   —-&gt;编写Java程序的程序员使用的软件<br>JRE : Java Runtime Enviroment  —-》运行Java程序的用户使用的软件<br>简单说就是只安装JRE就可以运行Java的程序但是不能进行编写。<br>【6】配置环境变量path<br>1.打开我的电脑属性选项<br>2.左边菜单打开高级系统选项，然后打开环境变量<br>3.新建环境变量叫：classpath 变量值为：.<br>如：变量名：classpath<br>   变量值：.<br>classpath作用：只要你配置到classpath中的路径，在执行java的字节码文件的时候，就会去这个配置的路径下找对应的字节码文件，而写了.\就可以全局运行Java了<br>4.新建环境变量：JAVA_HOME:和上一步一样新建然后变量名输入JAVA_HOME，变量值为JDK的安装目录<br>如：变量名：JAVA_HOME<br>   变量值：C:\Program Files\Java\jdk1.8.0_151<br>这个环境变量是为了之后运行tomcat用的<br>5.在path环境变量中加入自己安装JDK的路径加\bin<br>如：C:\Program Files\Java\jdk1.8.0_151\bin<br>也可以新建一个path环境变量然后输入路径+\bin<br>至此我们电脑的Java的运行环境算是配好了</p>
-<h1 id="API文档"><a href="#API文档" class="headerlink" title="API文档"></a>API文档</h1><p>JDK帮助文档<br>SUN公司为JDK工具包提供了一整套文档资料,我们习惯上称之为JDK文档。<br>JDK文档中提供了Java中的各种技术的详细资料,以及JDK中提供的各种类的帮助说明。<br>JDk文档是Java语言的完整说明,大多数书籍中的类的介绍都要参照它来完成,它是编程者经常查阅的资料<br>如何理解API：就当做是一个“字典”，“使用手册”，API就相当于是一个电子的帮助文档，可以帮我们查看JDK提供的类的信息，平时查看的时候可结合百度一起看。<br>其实API没有什么神奇的，就是一个电子文档而已，帮助我们查看JAVA中涉及到的一些技能点。</p>
-<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1><p>现在我们开始写我们的第一段代码了，实现一个输出HelloWorld的功能<br>在任意位置建一个文件夹，起名为Java，然后在文件夹下新建一个txt文档，起名为HelloWorld.java。<br>打开文档输入：<br>public class HelloWorld{<br>        public static void main(String[] args){<br>                System.out.println(“hi 这是一段Java程序。。。”);<br>        }<br>}<br>然后保存。<br>打开我们的命令行，输入cd：java文件夹路径，进到我们这个文件夹里面。<br>输入javac HelloWorld.java对我们写的java文件进行编译。编译完之后在文件夹下面会出现一个.class文件就编译好的文件。<br>输入java HelloWorld运行程序<br>在命令行中出现HelloWorld就成功了。<br>注意：在写代码的时候要注意区分中英文的符号，所有符号必须是英文格式的，不然会出现编译错误。<br>     我们的文件名和类名必须是一样的，不然也会出现编译错误。<br>    编写代码时要注意格式排版，养成习惯，以后方便查看代码和BUG。</p>
-<h1 id="小练习：输出一个人的个人信息"><a href="#小练习：输出一个人的个人信息" class="headerlink" title="小练习：输出一个人的个人信息"></a>小练习：输出一个人的个人信息</h1><p>要求：在命令行中输出姓名，年龄，职业，身高，体重。<br>代码如下：<br>public class HiWorld{<br>        public static void main(String[] args){<br>                //进行自我介绍：<br>                System.out.println(“姓名:”);<br>                System.out.println(“丽丽”);<br>                System.out.println(“职业:”);<br>                System.out.println(“学生”);<br>                System.out.println(“身高:”);<br>                System.out.println(“180”);<br>                System.out.println(“体重:”);<br>                System.out.println(“130”);</p>
-<pre><code>    &#125;
-</code></pre>
-<p>}</p>
-<h1 id="扩展：JDK、JRE、JVM的区别"><a href="#扩展：JDK、JRE、JVM的区别" class="headerlink" title="扩展：JDK、JRE、JVM的区别"></a>扩展：JDK、JRE、JVM的区别</h1><p>JDK和JRE的区别<br>初学JAVA很容易被其中的很多概念弄的傻傻分不清楚，首先从概念上理解一下吧，JDK（Java Development Kit）简单理解就是Java开发工具包，JRE(Java Runtime Enviroment)是Java的运行环境，JVM( java virtual machine)也就是常常听到Java虚拟机。JDK是面向开发者的，JRE是面向使用JAVA程序的用户。</p>
-<p>JRE和JVM的区别<br>JVM – java virtual machineJVM就是我们常说的java虚拟机，它是整个java实现跨平台的最核心的部分，所有的java程序会首先被编译为.class的类文件，这种类文件可以在虚拟机上执行，class文件并不直接与机器的操作系统相对应，而是经过虚拟机间接与操作系统交互，由虚拟机将程序解释给本地系统执行，类似于C#中的CLR。<br>JVM不能单独搞定class的执行，解释class的时候JVM需要调用解释所需要的类库lib。在JDK下面的的jre目录里面有两个文件夹bin和lib,在这里可以认为bin里的就是jvm，lib中则是jvm工作所需要的类库，而jvm和 lib和起来就称为jre。<br>JVM+Lib=JRE，如果讲的具体点就是bin目录下的jvm.dll文件， jvm.dll无法单独工作，当jvm.dll启动后，会使用explicit的方法(就是使用Win32 API之中的LoadLibrary()与GetProcAddress()来载入辅助用的动态链接库)，而这些辅助用的动态链接库(.dll)都必须位 于jvm.dll所在目录的父目录之中。因此想使用哪个JVM，只需要设置PATH，指向JRE所在目录下的jvm.dll。</p>
+            <h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><p>【1】标识符：读音   biao zhi fu<br>【2】什么是标识符？<br>  包，类，变量，方法…..等等,只要是起名字的地方,那个名字就是标识符<br>【3】标识符定义规则：<br>1.四个可以（组成部分）：数字，字母，下划线_，美元符号$<br>注意：字母概念比较宽泛，指的是英文字母，汉字，日语，俄语……<br>但是我们一般起名字尽量使用英文字母<br>2.两个不可以：不可以以数字开头，不可以使用java中的关键字<br>3.见名知意：增加可读性<br>4.大小写敏感：  int a ;  int A;<br>5.遵照驼峰命名：<br> 类名：首字母大写，其余遵循驼峰命名<br> 方法名，变量名：首字母小写，其余遵循驼峰命名<br> 包名：全部小写，不遵循驼峰命名<br>6.长度无限制，但是不建议太长  asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasfd</p>
+<h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><p>关键字：被JAVA语言赋予了特殊含义，用作专门用途的单词<br>比如：clss、char、if、for<br>特点：JAVA中所有关键字都为小写<br>官网中关键字的说明：<a class="link"   target="_blank" rel="noopener" href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html" >https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html<i class="fas fa-external-link-alt"></i></a><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%85%B3%E9%94%AE%E5%AD%97.png"
+                     
+                ></p>
+<h2 id="变量和常量"><a href="#变量和常量" class="headerlink" title="变量和常量"></a>变量和常量</h2><p>顾名思义，变量就是可以变化的量，而常量就是一个固定的数值。<br>比如：int a；这里面的a没有赋值，所以在之后的操作中可以是10，20等很多值，即为变量。<br>     int a=10；这里面a给了一个10为初始值，虽然后续也可以修改但是没改之前这个值都是不变的，即为常量。<br>变量和常量的用途是不一样的，比如要是想定义一个年龄这种随着时间岁数回增长的，就可以定义为变量。</p>
+<h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><p>Java是一种强类型语言，每个变量都必须声明其数据类型。<br>Java的数据类型可分为两大类：基本数据类型（primitive data type）和引用数据类型（reference data type）。<br>基本数据类型分为数值型、字符型、布尔型，其中数值型还分为整数类型和浮点类型。<br>定义这些数据类型的代码分别是：<br>整数：byte、short、int、long<br>浮点数：float、double<br>字符型：char<br>布尔型：boolean<br>引用数据类型分为类、接口、数组。<br>定义这些数据类型的代码分别是：<br>类：class<br>接口：interface<br>数组有很多种定义方法，在后面讲数组的文章会写到。<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.png"
+                     
+                ></p>
 
         </div>
 
@@ -258,11 +259,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：Java核心机制及部署</li>
+        <li>Post title：数据类型</li>
         <li>Post author：Abner</li>
-        <li>Create time：2021-12-22 17:49:41</li>
+        <li>Create time：2021-12-22 21:19:47</li>
         <li>
-            Post link：YYAnG003.github.io/2021/12/22/Java核心/
+            Post link：YYAnG003.github.io/2021/12/22/Java_数据类型/
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
@@ -277,7 +278,7 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/Java/">#Java</a>&nbsp;
+                        <a href="/tags/Java-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">#Java_数据类型</a>&nbsp;
                     </li>
                 
             </ul>
@@ -286,14 +287,29 @@
         
             <div class="article-nav">
                 
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/12/22/Java_%E8%BF%90%E7%AE%97%E7%AC%A6/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Java_运算符</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/12/22/Java/"
+                           href="/2021/12/22/Java_%E6%A0%B8%E5%BF%83/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Java介绍</span>
+                                <span class="post-nav-title-item">Java核心机制及部署</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -502,7 +518,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%9C%BA%E5%88%B6"><span class="nav-number">1.</span> <span class="nav-text">核心机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8DOS%E5%91%BD%E4%BB%A4"><span class="nav-number">1.1.</span> <span class="nav-text">常用DOS命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOS%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.1.1.</span> <span class="nav-text">DOS操作系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOS%E5%91%BD%E4%BB%A4"><span class="nav-number">1.1.2.</span> <span class="nav-text">DOS命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%EF%BC%9A"><span class="nav-number">1.1.3.</span> <span class="nav-text">命令学习：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87%E2%80%93-gt-%E8%A3%85JDK"><span class="nav-number">1.2.</span> <span class="nav-text">Java环境准备–&gt;装JDK</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#API%E6%96%87%E6%A1%A3"><span class="nav-number">2.</span> <span class="nav-text">API文档</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hello-World"><span class="nav-number">3.</span> <span class="nav-text">Hello World</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%8F%E7%BB%83%E4%B9%A0%EF%BC%9A%E8%BE%93%E5%87%BA%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%9A%84%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF"><span class="nav-number">4.</span> <span class="nav-text">小练习：输出一个人的个人信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%EF%BC%9AJDK%E3%80%81JRE%E3%80%81JVM%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">5.</span> <span class="nav-text">扩展：JDK、JRE、JVM的区别</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="nav-number">1.1.</span> <span class="nav-text">标识符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">1.2.</span> <span class="nav-text">关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F"><span class="nav-number">1.3.</span> <span class="nav-text">变量和常量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.4.</span> <span class="nav-text">基本数据类型</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
