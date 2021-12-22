@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-12-22T06:16:43.137Z</updated>
+  <updated>2021-12-22T07:05:09.617Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JAVA</title>
+    <link href="http://example.com/2021/12/22/JAVA/"/>
+    <id>http://example.com/2021/12/22/JAVA/</id>
+    <published>2021-12-22T06:43:04.000Z</published>
+    <updated>2021-12-22T07:05:09.617Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="JAVA"><a href="#JAVA" class="headerlink" title="JAVA"></a>JAVA</h1><p>这是一个JAVA记录</p><h2 id="1-第一章"><a href="#1-第一章" class="headerlink" title="1.第一章"></a>1.第一章</h2><p>啊吧吧吧</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;JAVA&quot;&gt;&lt;a href=&quot;#JAVA&quot; class=&quot;headerlink&quot; title=&quot;JAVA&quot;&gt;&lt;/a&gt;JAVA&lt;/h1&gt;&lt;p&gt;这是一个JAVA记录&lt;/p&gt;
+&lt;h2 id=&quot;1-第一章&quot;&gt;&lt;a href=&quot;#1-第一章&quot; class=&quot;headerli</summary>
+      
+    
+    
+    
+    <category term="JAVA" scheme="http://example.com/categories/JAVA/"/>
+    
+    
+    <category term="JAVA" scheme="http://example.com/tags/JAVA/"/>
+    
+  </entry>
   
   <entry>
     <title>博客简介</title>
