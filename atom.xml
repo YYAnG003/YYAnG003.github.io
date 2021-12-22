@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-12-21T10:49:46.020Z</updated>
+  <updated>2021-12-22T06:16:43.137Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>博客简介</title>
+    <link href="http://example.com/2021/12/22/%E7%AE%80%E4%BB%8B/"/>
+    <id>http://example.com/2021/12/22/%E7%AE%80%E4%BB%8B/</id>
+    <published>2021-12-22T06:10:25.000Z</published>
+    <updated>2021-12-22T06:16:43.137Z</updated>
+    
+    <content type="html"><![CDATA[<p>本博客于大学开始制作，记录学习记录和学习过程遇到的问题和解决办法。<br>博客设有分类和标签搜索功能，方便大家查找内容。<br>如遇到问题，可在评论区留下你的问题和建议。<br>谢谢大家观看。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;本博客于大学开始制作，记录学习记录和学习过程遇到的问题和解决办法。&lt;br&gt;博客设有分类和标签搜索功能，方便大家查找内容。&lt;br&gt;如遇到问题，可在评论区留下你的问题和建议。&lt;br&gt;谢谢大家观看。&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+    <category term="简介" scheme="http://example.com/tags/%E7%AE%80%E4%BB%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
