@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-12-22T14:40:04.543Z</updated>
+  <updated>2021-12-23T11:44:11.019Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,9 +17,130 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Java中的内存分析</title>
+    <link href="http://example.com/2021/12/23/%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/"/>
+    <id>http://example.com/2021/12/23/%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/</id>
+    <published>2021-12-23T11:34:49.000Z</published>
+    <updated>2021-12-23T11:44:11.019Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="内存分析"><a href="#内存分析" class="headerlink" title="内存分析"></a>内存分析</h1><h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>this关键字 用法：<br>1.this可以修饰属性：<br>总结：当属性名字和形参发生重名的时候，或者  属性名字 和局部变量重名的时候，都会发生就近原则，所以如果我要是直接使用变量名字的话就指的是离的近的那个形参或者局部变量，这时候如果我想要表示属性的话，在前面要加上：this.修饰<br>如果不发生重名问题的话，实际上你要是访问属性也可以省略this.<br>{<br>public class Person {<br>    //属性<br>    int age;<br>    String name;<br>    double height;<br>    //空构造器<br>    public Person(){<br>    }<br>    //有参构造器<br>    public Person(int age,String name,double height){<br>        this.age = age;<br>        this.name = name;<br>        this.height = height;<br>    }<br>    //方法：<br>    public void eat(){<br>        int age = 10;<br>        System.out.println(age);//就近原则，age指的是离它近的age–》局部变量的age<br>        System.out.println(this.age);//这里指代的就是属性的age<br>        System.out.println(“我喜欢吃饭”);<br>    }<br>}<br>2.this修饰方法：<br>总结：在同一个类中，方法可以互相调用，this.可以省略不写。<br>{<br>public class Person {<br>    //属性<br>    int age;<br>    String name;<br>    double height;<br>    //空构造器<br>    public Person(){<br>    }<br>    //有参构造器<br>    public Person(int age,String name,double height){<br>        this.age = age;<br>        this.name = name;<br>        this.height = height;<br>    }<br>    //方法：<br>    /<em>public void eat(){<br>        int age = 10;<br>        System.out.println(age);//就近原则，age指的是离它近的age–》局部变量的age<br>        System.out.println(this.age);//这里指代的就是属性的age<br>        System.out.println(“我喜欢吃饭”);<br>    }</em>/<br>    public void play(){<br>        /<em>this.</em>/eat();<br>        System.out.println(“上网”);<br>        System.out.println(“洗澡”);<br>    }<br>    public void eat(){<br>        System.out.println(/<em>this.</em>/age);<br>        System.out.println(“吃饭”);<br>    }<br>}<br>3.this可以修饰构造器：<br>总结：同一个类中的构造器可以相互用this调用，注意：this修饰构造器必须放在第一行<br>{<br>    public class Person {<br>    //属性<br>    int age;<br>    String name;<br>    double height;<br>    //空构造器<br>    public Person(){<br>    }<br>    //有参构造器<br>    public Person(int age,String name,double height){<br>        this(age,name);<br>        this.height = height;<br>    }<br>    public Person(int age,String name){<br>        this(age);<br>        this.name = name;<br>    }<br>    public Person(int age){<br>        this.age = age;<br>    }<br>    //方法：<br>    /<em>public void eat(){<br>        int age = 10;<br>        System.out.println(age);//就近原则，age指的是离它近的age–》局部变量的age<br>        System.out.println(this.age);//这里指代的就是属性的age<br>        System.out.println(“我喜欢吃饭”);<br>    }</em>/<br>    public void play(){<br>        /<em>this.</em>/eat();<br>        System.out.println(“上网”);<br>        System.out.println(“洗澡”);<br>    }<br>    public void eat(){<br>        System.out.println(/<em>this.</em>/age);<br>        System.out.println(“吃饭”);<br>    }<br>}</p><h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><p>static可以修饰：属性，方法，代码块，内部类。<br>1.static修饰属性<br>{<br>public class Test {<br>    //属性：<br>    int id;<br>    static int sid;<br>    //这是一个main方法，是程序的入口：<br>    public static void main(String[] args) {<br>        //创建一个Test类的具体的对象<br>        Test t1 = new Test();<br>        t1.id = 10;<br>        t1.sid = 10;<br>        Test t2 = new Test();<br>        t2.id = 20;<br>        t2.sid = 20;<br>        Test t3 = new Test();<br>        t3.id = 30;<br>        t3.sid = 30;<br>        //读取属性的值：<br>        System.out.println(t1.id);<br>        System.out.println(t2.id);<br>        System.out.println(t3.id);<br>        System.out.println(t1.sid);<br>        System.out.println(t2.sid);<br>        System.out.println(t3.sid);<br>    }<br>}<br>static修饰属性总结：<br>（1）在类加载的时候一起加载入方法区中的静态域中<br>（2）先于对象存在<br>（3）访问方式： 对象名.属性名    类名.属性名（推荐）<br>static修饰属性的应用场景：某些特定的数据想要在内存中共享，只有一块 –》这个情况下，就可以用static修饰的属性</p><h2 id="static修饰方法"><a href="#static修饰方法" class="headerlink" title="static修饰方法"></a>static修饰方法</h2><p>{<br>public class Demo {<br>    int id;<br>    static int sid;<br>    public void a(){<br>        System.out.println(id);<br>        System.out.println(sid);<br>        System.out.println(“——a”);<br>    }<br>    //1.static和public都是修饰符，并列的没有先后顺序，先写谁后写谁都行<br>    static public void b(){<br>        //System.out.println(this.id);//4.在静态方法中不能使用this关键字<br>        //a();//3.在静态方法中不能访问非静态的方法<br>        //System.out.println(id);//2.在静态方法中不能访问非静态的属性<br>        System.out.println(sid);<br>        System.out.println(“——b”);<br>    }<br>    //这是一个main方法，是程序的入口：<br>    public static void main(String[] args) {<br>        //5.非静态的方法可以用对象名.方法名去调用<br>        Demo d = new Demo();<br>        d.a();<br>        //6.静态的方法可以用   对象名.方法名去调用  也可以 用  类名.方法名 （推荐）<br>        Demo.b();<br>        d.b();</p><pre><code>&#125;</code></pre><p>}</p><h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p>类的组成：属性，方法，构造器，代码块，内部类<br>代码块分类：普通块，构造块，静态块，同步块（多线程）<br>代码：<br>{<br>public class Test {<br>    //属性<br>    int a;<br>    static int sa;<br>    //方法<br>    public void a(){<br>        System.out.println(“—–a”);<br>        {<br>            //普通块限制了局部变量的作用范围<br>            System.out.println(“这是普通块”);<br>            System.out.println(“—-000000”);<br>            int num = 10;<br>            System.out.println(num);<br>        }<br>        //System.out.println(num);<br>        //if(){}<br>        //while(){}<br>    }<br>    public static void b(){<br>        System.out.println(“——b”);<br>    }<br>    //构造块<br>    {<br>        System.out.println(“——这是构造块”);<br>    }<br>    //静态块<br>    static{<br>        System.out.println(“—–这是静态块”);<br>        //在静态块中只能方法：静态属性，静态方法<br>        System.out.println(sa);<br>        b();<br>    }<br>    //构造器<br>    public Test(){<br>        System.out.println(“这是空构造器”);<br>    }<br>    public Test(int a){<br>        this.a = a;<br>    }<br>    //这是一个main方法，是程序的入口：<br>    public static void main(String[] args) {<br>        Test t = new Test();<br>        t.a();<br>        Test t2 = new Test();<br>        t2.a();<br>    }<br>}<br>总结：<br>代码块执行顺序：<br>最先执行静态块，只在类加载的时候执行一次，所以一般以后实战写项目：创建工厂，数据库的初始化信息都放入静态块。<br>一般用于执行一些全局性的初始化操作。<br>再执行构造块，（不常用）<br>再执行构造器，<br>再执行方法中的普通块</p><h1 id="包"><a href="#包" class="headerlink" title="包"></a>包</h1><p>包的作用：<br>为了解决重名问题（实际上包对应的就是盘符上的目录），解决权限问题。<br>创建包<br>包名定义：<br>（1）名字全部小写<br>（2）中间用.隔开<br>（3）一般都是公司域名倒着写 ：  com.jd   com.msb<br>（4）加上模块名字：<br> com.jd.login    com.jd.register<br>（5）不能使用系统中的关键字：nul,con,com1—com9…..<br>（6）包声明的位置一般都在非注释性代码的第一行：<br>总结：<br>（1）使用不同包下的类要需要导包： import **.<em>.</em>;  例如：import java.util.Date;<br>（2）在导包以后，还想用其他包下同名的类，就必须要手动自己写所在的包。<br>（3）同一个包下的类想使用不需要导包，可以直接使用。<br>（4）在java.lang包下的类，可以直接使用无需导包：<br>（5）IDEA中导包快捷键：alt+enter<br>    可以自己设置自动导包<br>（6）可以直接导入*：</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;内存分析&quot;&gt;&lt;a href=&quot;#内存分析&quot; class=&quot;headerlink&quot; title=&quot;内存分析&quot;&gt;&lt;/a&gt;内存分析&lt;/h1&gt;&lt;h2 id=&quot;this&quot;&gt;&lt;a href=&quot;#this&quot; class=&quot;headerlink&quot; title=&quot;this&quot;&gt;&lt;/a</summary>
+      
+    
+    
+    
+    <category term="Java" scheme="http://example.com/categories/Java/"/>
+    
+    
+    <category term="内存分析" scheme="http://example.com/tags/%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>面向对象</title>
+    <link href="http://example.com/2021/12/23/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://example.com/2021/12/23/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</id>
+    <published>2021-12-23T10:56:58.000Z</published>
+    <updated>2021-12-23T11:34:25.567Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="面向过程和面向对象的区别"><a href="#面向过程和面向对象的区别" class="headerlink" title="面向过程和面向对象的区别"></a>面向过程和面向对象的区别</h1><p>面向过程：当事件比较简单的时候，利用面向过程，注重的是事件的具体的步骤/过程，注重的是过程中的具体的行为，以函数为最小单位，考虑怎么做。<br>面向对象：注重找“参与者”,将功能封装进对象，强调具备了功能的对象，以类/对象为最小单位，考虑谁来做。<br>案例：<br>人把大象装进冰箱：<br>面向过程：<br>函数1：打开冰箱(){人站在冰箱前，打开冰箱，冰箱卡到30度角的时候，冰箱的灯打开了………}<br>函数2：储存大象(){大象先迈左腿，再迈右退，考虑冰箱能不能装下……}<br>函数3：关闭冰箱(){人站在冰箱前，关闭冰箱，冰箱开到30度角的时候，冰箱的灯关闭了……….}</p><p>面向对象：<br>人{<br>打开(冰箱){<br>冰箱.打开();<br>}</p><p>存储(大象){<br>        大象.进入();<br>}</p><p>关闭(冰箱){<br>冰箱.关闭();<br>}<br>}</p><p>冰箱{<br>打开（）{ 1.2.3.}<br> 关闭（）{}<br>}</p><p>柜子{</p><p>}</p><p>大象{<br>进入(冰箱){<br>}<br>}<br>面向过程 —&gt; 面向对象 , 其实就是由执行者 —&gt; 指挥者的 一个过渡</p><h1 id="类和对象的关系"><a href="#类和对象的关系" class="headerlink" title="类和对象的关系"></a>类和对象的关系</h1><p>1.万事万物皆对象，身边所有的事物都是对象<br>2.对象：具体的事物，具体的实体，具体的实例，模板下具体的产品<br>  类：对对象向上抽取出像的部分，公共的部分，形成类，类是抽象的，是一个模板。<br>相当于类是有相同特征的对象的集合。<br>3.一般在写代码的时候先写类，然后在根据类创建对应的对象。</p><h1 id="面向对象的三个阶段"><a href="#面向对象的三个阶段" class="headerlink" title="面向对象的三个阶段"></a>面向对象的三个阶段</h1><p>1.面向对象分析OOA  –  Object Oriented Analysis<br>对象：张三，王五，朱六，你，我<br>抽取出一个类—-》人类<br>类里面有什么：<br>动词–》动态特性–》方法<br>名词–》静态特性–》属性<br>2.面向对象设计OOD  –  Object Oriented Design<br>先有类，再有对象：<br>类：人类： Person<br>对象：zhangsan ，lisi，zhuliu<br>3.面向对象编程OOP  –  Object Oriented Programming</p><h1 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h1><h2 id="创建类"><a href="#创建类" class="headerlink" title="创建类"></a>创建类</h2><p>1）属性（field 成员变量）<br>属性用于定义该类或该类对象包含的数据或者说静态特征。属性作用范围是整个类体。<br>属性定义格式：<br>[修饰符]  属性类型  属性名 = [默认值] ;</p><p>（2）方法<br>方法用于定义该类或该类实例的行为特征和功能实现。方法是类和对象行为特征的抽象。方法很类似于面向过程中的函数。面向过程中，函数是最基本单位，整个程序由一个个函数调用组成。面向对象中，整个程序的基本单位是类，方法是从属于类和对象的。<br>方法定义格式：<br>[修饰符]  方法返回值类型  方法名(形参列表) {<br>        // n条语句<br>}<br>void代表没有返回值；方法的作用：重用代码，封装功能，便于修改。<br>代码：<br>public class Person {<br>    //名词—》属性—》成员变量—》放在类中方法外（注意：我们只把有需要的内容写到代码里，不相关的东西不要放在代码中）<br>    int age ;//年龄<br>    String name;//姓名<br>    double height;//身高<br>    double weight;//体重<br>    //动词—》方法<br>    //吃饭<br>    public void eat(){<br>        int num = 10;//局部变量：放在方法中<br>        System.out.println(“我喜欢吃饭”);<br>    }<br>    //睡觉：<br>    public void sleep(String address){<br>        System.out.println(“我在”+address+”睡觉”);<br>    }<br>    //自我介绍：<br>    public String introduce(){<br>        return “我的名字是：”+name+”，我的年龄是：”+age+”,我的身高是：”+height+”,我的体重是：”+weight;<br>    }<br>}</p><h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><p>public class Test {//测试类<br>    //这是一个main方法，是程序的入口：<br>    public static void main(String[] args) {<br>        //创建一个人类的具体的对象/实例：<br>        //创建一个对象，对象的名字叫：zs<br>        //Person 属于 引用数据类型<br>        //第一次加载类的时候，会进行类的加载，初始化创建对象的时候，对象的属性没有给赋值，有默认的初始化的值。<br>        Person zs = new Person();<br>        zs.name = “张三”;<br>        zs.age = 19;<br>        zs.height = 180.4;<br>        zs.weight = 170.4;<br>        //再创建一个对象：<br>        //再次创建类的时候，就不会进行类的加载了，类的加载只在第一次需要的时候加载一次<br>        Person ls = new Person();<br>        ls.name = “李四”;<br>        ls.age = 18;<br>        ls.height = 170.6;<br>        ls.weight = 160.5;<br>        //对属性值进行读取：<br>        System.out.println(zs.name);<br>        System.out.println(ls.age);<br>        //对方法进行操作：<br>        //不同的对象，属性有自己的特有的值，但是方法都是调用类中通用的方法。<br>        //属性：各个对象的属性是独立的，<br>        //方法：各个对象的方法是共享的。<br>        zs.eat();<br>        ls.eat();<br>        zs.sleep(“教室”);<br>        /<em>String str = zs.introduce();<br>        System.out.println(str);</em>/<br>        System.out.println(zs.introduce());<br>    }<br>}</p><h1 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h1><p>public class Test {<br>    //这是一个main方法，是程序的入口：<br>    public static void main(String[] args) {<br>        //创建一个Person类的具体的对象/实例/实体：<br>        /*<br>        创建对象的过程：<br>        1.第一次遇到Person的时候，进行类的加载（只加载一次）<br>        2.创建对象，为这个对象在堆中开辟空间<br>        3.为对象进行属性的初始化动作<br>        new关键字实际上是在调用一个方法，这个方法叫构造方法（构造器）<br>        调用构造器的时候，如果你的类中没有写构造器，那么系统会默认给你分配一个构造器，只是我们看不到罢了。<br>        可以自己显式 的将构造器编写出来：<br>        构造器的格式：<br>        [修饰符] 构造器的名字(){<br>        }<br>        构造器和方法的区别：<br>        1.没有方法的返回值类型<br>        2.方法体内部不能有return语句<br>        3.构造器的名字很特殊，必须跟类名一样<br>        构造器的作用：不是为了创建对象，因为在调用构造器之前，这个对象就已经创建好了，并且属性有默认的初始化的值。<br>        调用构造器的目的是给属性进行赋值操作的。<br>        注意：我们一般不会在空构造器中进行初始化操作，因为那样的话每个对象的属性就一样了。<br>        实际上，我们只要保证空构造器的存在就可以了，里面的东西不用写<br>         */<br>        Person p = new Person();<br>        System.out.println(p.age);<br>        System.out.println(p.name);<br>        System.out.println(p.height);<br>        Person p2 = new Person();<br>        System.out.println(p2.age);<br>        System.out.println(p2.name);<br>        System.out.println(p2.height);<br>    }<br>}</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;面向过程和面向对象的区别&quot;&gt;&lt;a href=&quot;#面向过程和面向对象的区别&quot; class=&quot;headerlink&quot; title=&quot;面向过程和面向对象的区别&quot;&gt;&lt;/a&gt;面向过程和面向对象的区别&lt;/h1&gt;&lt;p&gt;面向过程：当事件比较简单的时候，利用面向过程，注重的是事件的</summary>
+      
+    
+    
+    
+    <category term="Java" scheme="http://example.com/categories/Java/"/>
+    
+    
+    <category term="面向对象" scheme="http://example.com/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IDEA</title>
+    <link href="http://example.com/2021/12/23/IDEA/"/>
+    <id>http://example.com/2021/12/23/IDEA/</id>
+    <published>2021-12-23T10:46:00.000Z</published>
+    <updated>2021-12-23T10:55:19.547Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h1><p>集成开发环境（IDE，Integrated Development Environment ）是用于提供程序开发环境的应用程序，一般包括代码编辑器、编译器、调试器和图形用户界面等工具。集成了代码编写功能、分析功能、编译功能、调试功能等一体化的开发软件服务套。所有具备这一特性的软件或者软件套（组）都可以叫集成开发环境。如微软的Visual Studio系列，Borland的C++ Builder、Delphi系列等。该程序可以独立运行，也可以和其它程序并用。IDE多被用于开发HTML应用软件。例如，许多人在设计网站时使用IDE（如HomeSite、DreamWeaver等），因为很多项任务会自动生成。编程开发软件将编辑、编译、调试等功能集成在一个桌面环境中,这样就大大方便了用户。<br>优点<br>节省时间和精力。IDE的目的就是要让开发更加快捷方便，通过提供工具和各种性能来帮助开发者组织资源，减少失误，提供捷径。<br>建立统一标准。当一组程序员使用同一个开发环境时，就建立了统一的工作标准，当IDE提供预设的模板，或者不同团队分享代码库时，这一效果就更加明显了。<br>管理开发工作。首先，IDE提供文档工具，可以自动输入开发者评论，或者迫使开发者在不同区域编写评论。其次，IDE可以展示资源，更便于发现应用所处位置，无需在文件系统里面艰难的搜索。<br>缺点<br>学习曲线问题。IDE基本上是比较复杂的工具，为了更好的熟练使用，需要一定的时间和耐心。<br>初学者的困难。对初学者来说，使用IDE来学习开发有相当的难度，不适合学习一种新语言时使用。<br>无法修复坏代码或设计。开发者不能完全依赖工具的便捷，还是必须保持专业水准和熟练度，开发的成果好坏主要还是看开发员的技术。</p><h1 id="JetBrains公司"><a href="#JetBrains公司" class="headerlink" title="JetBrains公司"></a>JetBrains公司</h1><p>JetBrains公司介绍：<br>JetBrains是一家捷克的软件开发公司，该公司位于捷克的布拉格，并在俄罗斯的圣彼得堡及美国麻州波士顿都设有办公室，该公司最为人所熟知的产品是Java编程语言开发撰写时所用的集成开发环境：IntelliJ IDEA。公司旗下还有其它产品，比如：<br>WebStorm: 用于开发JavaScript、HTML5、 CS3等前端技术;<br>PyCharm: 用于开发python（python语言热度排行榜排名第一，在人工智能大数据领域应用）<br>PhpStorm: 用于开发PHP<br>RubyMine: 用于开发Ruby/Rails<br>AppCode: 用于开发Objective - C/Swift,替换xcode的<br>CLion: 用于开发C/C++<br>DataGrip: 用于开发数据库和SQL<br>Rider: 用于开发.NET<br>GoLand: 用于开发Go（区块链主流开发语言就是Go语言）<br>官网：<a class="link"   href="https://www.jetbrains.com/" >https://www.jetbrains.com/<i class="fas fa-external-link-alt"></i></a></p><h1 id="IDEA"><a href="#IDEA" class="headerlink" title="IDEA"></a>IDEA</h1><p>IDEA 全称IntelliJ IDEA，是用于java语言开发的集成环境IDE(Integrated Development Environment)，也可用于其他语言。<br>IntelliJ在业界被公认为最好的java开发工具之一，尤其在智能代码助手、代码自动提示、重构、J2EE支持、Ant、JUnit、CVS整合、代码审查、 创新的GUI设计等方面的功能可以说是超常的。<br>IDEA是JetBrains公司的产品，这家公司总部位于捷克共和国的首都布拉格，开发人员以严谨著称的东欧程序员为主。<br>IDEA的支持<br><img                       lazyload                     src="/images/loading.svg"                     data-src="/images/idea1.png"                                     ><br><img                       lazyload                     src="/images/loading.svg"                     data-src="/images/idea2.png"                                     ><br>IDEA的优势（相对于Eclipse）<br>1.强大的整合能力。比如: Git、 Maven、 Spring 等<br>2.提示功能的快速、便捷<br>3.提示功能的范围广<br>4.好用的快捷键和代码模板<br>5.精准搜索</p><h1 id="IDEA和Eclipse的区别"><a href="#IDEA和Eclipse的区别" class="headerlink" title="IDEA和Eclipse的区别"></a>IDEA和Eclipse的区别</h1><p>在Eclipse中我们有Workspace (工作空间)和Project (工程)的概念，在IDEA中只有Project (工程)和Module (模块)的概念。<br>这里的对应关系为:<br>IDEA官网说明:<br>Eclipse中 workspace 相当于 IDEA中的Project<br>Eclipse中   Project     相当于 IDEA中的Module<br>在IntelliJ IDEA中Project(工程) 是最顶级的级别，次级别是Module(模块)。<br>一个Project下可以有多个Module。<br>从Eclipse 转过来的人总是下意识地要在同一个窗口管理n个项目，这在Intellij IDEA是无法做到的。Intellij IDEA提供的解决方案是打开多个项目实例，即打开多个项目窗口。即:一个Project 打开一个Window窗口。<br>IDEA这样设置的原因：<br>目前主流的大型项目都是分布式部署的，结构都是类似这种多Module的。<br>这类项目一般是这样划分的，比如: 积分模块、任务模块、活动模块等等，模块之间彼此可以相互依赖。这些Module之间都是处于同一个项目业务下的模块，彼此之间是有不可分割的业务关系的。<br><img                       lazyload                     src="/images/loading.svg"                     data-src="/images/idea3.png"                                     ></p><h1 id="IDEA常用快捷键"><a href="#IDEA常用快捷键" class="headerlink" title="IDEA常用快捷键"></a>IDEA常用快捷键</h1><p>1.创建内容：alt+insert<br>2.main方法：psvm<br>3.输出语句：sout<br>4.复制行：ctrl+d<br>5.删除行：ctrl+y<br>6.代码向上/下移动：Ctrl + Shift + Up / Down<br>7.搜索类：  ctrl+n<br>8.生成代码  ：alt + Insert（如构造函数等，getter,setter,hashCode,equals,toString）<br>9.百能快捷键 : alt + Enter （导包，生成变量等）<br>10.单行注释或多行注释 ：  Ctrl + / 或 Ctrl + Shift + /<br>11.重命名 shift+f6<br>12.for循环  直接 ：fori   回车即可<br>13.代码块包围：try-catch,if,while等  ctrl+alt+t<br>14.显示代码结构  : alt + 7<br>15.显示导航栏： alt +1<br>16.撤回：ctrl+z<br>17.缩进：tab  取消缩进： shift+tab</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;IDE&quot;&gt;&lt;a href=&quot;#IDE&quot; class=&quot;headerlink&quot; title=&quot;IDE&quot;&gt;&lt;/a&gt;IDE&lt;/h1&gt;&lt;p&gt;集成开发环境（IDE，Integrated Development Environment ）是用于提供程序开发环境的应用程序，一般</summary>
+      
+    
+    
+    
+    <category term="Java" scheme="http://example.com/categories/Java/"/>
+    
+    
+    <category term="IDEA" scheme="http://example.com/tags/IDEA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java中的数组</title>
+    <link href="http://example.com/2021/12/23/Java-%E6%95%B0%E7%BB%84/"/>
+    <id>http://example.com/2021/12/23/Java-%E6%95%B0%E7%BB%84/</id>
+    <published>2021-12-23T10:17:45.000Z</published>
+    <updated>2021-12-23T10:44:06.732Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>数组用来存储数据的，在程序设计中，为了处理方便，数组用来将相同类型的若干数据组织起来。这个若干数据的集合我们称之为数组。</p><h1 id="数组的定义"><a href="#数组的定义" class="headerlink" title="数组的定义"></a>数组的定义</h1><p>数组是相同类型数据的有序集合。数组描述的是相同类型的若干个数据，按照一定的先后次序排列组合而成。其中，每一个数据称作一个元素，每个元素可以通过一个索引（下标）来访问它们。<br>数组的四个基本特点：<br>1.长度是确定的。数组一旦被创建，它的大小就是不可以改变的。<br>2.其元素的类型必须是相同类型，不允许出现混合类型。<br>3.数组类型可以是任何数据类型，包括基本类型和引用类型。<br>4.数组有索引的：索引从0开始，到 数组.length-1 结束<br>5.数组变量属于引用类型，数组也是对象。<br>PS:数组变量属于引用类型，数组也是对象，数组中的每个元素相当于该对象的成员变量。数组本身就是对象，Java中对象是在堆中的，因此数组无论保存原始类型还是其他对象类型，数组对象本身是在堆中存储的。</p><h1 id="数组的定义方式"><a href="#数组的定义方式" class="headerlink" title="数组的定义方式"></a>数组的定义方式</h1><p>数组的初始化方式总共有三种：静态初始化、动态初始化、默认初始化。</p><h2 id="静态初始化"><a href="#静态初始化" class="headerlink" title="静态初始化"></a>静态初始化</h2><p>除了用new关键字来产生数组以外，还可以直接在定义数组的同时就为数组元素分配空间并赋值。<br>eg:<br>int[] arr = {12,23,45};<br>int[] arr = new int[]{12,23,45};</p><h2 id="动态初始化"><a href="#动态初始化" class="headerlink" title="动态初始化"></a>动态初始化</h2><p>数组定义与为数组元素分配空间并赋值的操作分开进行。<br>eg:<br>int[] arr ;<br>arr = new int[3]<br>arr[0] = 12;<br>arr[1] = 23;<br>arr[2] = 45;</p><h2 id="默认初始化"><a href="#默认初始化" class="headerlink" title="默认初始化"></a>默认初始化</h2><p>数组是引用类型，它的元素相当于类的实例变量，因此数组一经分配空间，其中的每个元素也被按照实例变量同样的方式被隐式初始化。数组是有初始默认值的。<br>int[] arr = new int[3];</p><h1 id="数组的应用"><a href="#数组的应用" class="headerlink" title="数组的应用"></a>数组的应用</h1><h2 id="main方法：程序的入口，在同一个类中，如果有多个方法，那么虚拟机就会识别main方法，从这个方法作为程序的入口"><a href="#main方法：程序的入口，在同一个类中，如果有多个方法，那么虚拟机就会识别main方法，从这个方法作为程序的入口" class="headerlink" title="main方法：程序的入口，在同一个类中，如果有多个方法，那么虚拟机就会识别main方法，从这个方法作为程序的入口"></a>main方法：程序的入口，在同一个类中，如果有多个方法，那么虚拟机就会识别main方法，从这个方法作为程序的入口</h2><p>main方法格式严格要求：<br>public static void main(String[] args){}<br>public static 修饰符 ，暂时用这个 –&gt;面向对象一章<br>voi d代表方法没有返回值 对应的类型void<br>main 见名知意名字<br>String[] args 形参，也就是不确定因素<br>问题：程序中是否可以有其他的方法也叫main方法？<br>可以，构成了方法的重载。</p><h1 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h1><p>二位数组的定义<br><img                       lazyload                     src="/images/loading.svg"                     data-src="/images/%E6%95%B0%E7%BB%84.png"                                     ><br>数组的内存分布<br><img                       lazyload                     src="/images/loading.svg"                     data-src="/images/%E6%95%B0%E7%BB%84%E5%86%85%E5%AD%98.png"                                     ></p><h1 id="二维数组的初始化方法"><a href="#二维数组的初始化方法" class="headerlink" title="二维数组的初始化方法"></a>二维数组的初始化方法</h1><p>数组的初始化方式总共有三种：静态初始化、动态初始化、默认初始化。</p><h2 id="静态初始化-1"><a href="#静态初始化-1" class="headerlink" title="静态初始化"></a>静态初始化</h2><p>除了用new关键字来产生数组以外，还可以直接在定义数组的同时就为数组元素分配空间并赋值。<br>eg：<br>int [] [] arr = { {1,2},{4,5,6} };<br>int [] [] arr = new int [] [] { {1,2},{4,5,6} };</p><h2 id="动态初始化-1"><a href="#动态初始化-1" class="headerlink" title="动态初始化"></a>动态初始化</h2><p>数组定义与为数组元素分配空间并赋值的操作分开进行。<br>int [] [] arr = new int [1] [2]; </p><h2 id="默认初始化-1"><a href="#默认初始化-1" class="headerlink" title="默认初始化"></a>默认初始化</h2><p>数组是引用类型，它的元素相当于类的实例变量，因此数组一经分配空间，其中的每个元素也被按照实例变量同样的方式被隐式初始化。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;数组&quot;&gt;&lt;a href=&quot;#数组&quot; class=&quot;headerlink&quot; title=&quot;数组&quot;&gt;&lt;/a&gt;数组&lt;/h1&gt;&lt;p&gt;数组用来存储数据的，在程序设计中，为了处理方便，数组用来将相同类型的若干数据组织起来。这个若干数据的集合我们称之为数组。&lt;/p&gt;
+&lt;h1 i</summary>
+      
+    
+    
+    
+    <category term="Java" scheme="http://example.com/categories/Java/"/>
+    
+    
+    <category term="数组" scheme="http://example.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java中的方法</title>
+    <link href="http://example.com/2021/12/23/Java-%E6%96%B9%E6%B3%95/"/>
+    <id>http://example.com/2021/12/23/Java-%E6%96%B9%E6%B3%95/</id>
+    <published>2021-12-23T09:39:25.000Z</published>
+    <updated>2021-12-23T10:37:59.986Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="方法的定义、调用、重载"><a href="#方法的定义、调用、重载" class="headerlink" title="方法的定义、调用、重载"></a>方法的定义、调用、重载</h1><h2 id="方法的定义和调用"><a href="#方法的定义和调用" class="headerlink" title="方法的定义和调用"></a>方法的定义和调用</h2><h3 id="什么是方法？"><a href="#什么是方法？" class="headerlink" title="什么是方法？"></a>什么是方法？</h3><p>方法(method)就是一段用来完成特定功能的代码片段，类似于其它语言的函数(function)。<br>方法用于定义该类或该类的实例的行为特征和功能实现。 方法是类和对象行为特征的抽象。方法很类似于面向过程中的函数。面向过程中，函数是最基本单位，整个程序由一个个函数调用组成。面向对象中，整个程序的基本单位是类，方法是从属于类和对象的。</p><h3 id="方法声明格式"><a href="#方法声明格式" class="headerlink" title="方法声明格式"></a>方法声明格式</h3><p>[修饰符1  修饰符2  …]  返回值类型    方法名(形式参数列表){<br>        Java语句；<br>}</p><h3 id="方法的调用方式"><a href="#方法的调用方式" class="headerlink" title="方法的调用方式"></a>方法的调用方式</h3><p>对象名.方法名(实参列表)</p><h3 id="方法的详细说明"><a href="#方法的详细说明" class="headerlink" title="方法的详细说明"></a>方法的详细说明</h3><p>形式参数：在方法声明时用于接收外界传入的数据。<br>实参：调用方法时实际传给方法的数据。<br>返回值：方法在执行完毕后返还给调用它的环境的数据。<br>返回值类型：事先约定的返回值的数据类型，如无返回值，必须显示指定为为void。<br>代码：</p><p>public class TestMethod01{</p><pre><code>    //方法的定义：（写方法）    public static int add(int num1,int num2)&#123;            int sum = 0;            sum += num1;            sum += num2;            return sum;//将返回值返回到方法的调用处    &#125;    public static void main(String[] args)&#123;            //10+20:            //方法的调用：（用方法）            int num = add(10,20);            System.out.println(num);            /*            int num1 = 10;            int num2 = 20;            int sum = 0;            sum += num1;            sum += num2;            System.out.println(sum);            */            //30+90:            int sum = add(30,90);            System.out.println(sum);            /*            int num3 = 30;            int num4 = 90;                int sum1 = 0 ;            sum1 += num3;            sum1 += num4;            System.out.println(sum1);            */            //50+48:            System.out.println(add(50,48));        &#125;        </code></pre><p>}</p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>1.方法是：对特定的功能进行提取，形成一个代码片段，这个代码片段就是我们所说的方法<br>2.方法和方法是并列的关系，所以我们定义的方法不能写到main方法中<br>3.方法的定义–》格式：<br>        修饰符 方法返回值类型 方法名(形参列表){<br>                方法体;<br>                return 方法返回值;<br>        }</p><p>4.方法的作用：提高代码的复用性<br>5.总结方法定义的格式：</p><ol><li>修饰符: 暂时使用public static —&gt;面向对象一章讲解</li><li>方法返回值类型  : 方法的返回值对应的数据类型<br>数据类型： 可以是基本数据类型（byte,short,int,long,float,double,char,boolean） 也可以是引用数据类型 </li><li>方法名 :见名知意，首字母小写，其余遵循驼峰命名，  eg: addNum ,一般尽量使用英文来命名  </li><li>形参列表 :方法定义的时候需要的形式参数 ：  int  num1, int num2 –&gt;相当于告诉方法的调用者：需要传入几个参数，需要传入的参数的类型<br> 实际参数：方法调用的时候传入的具体的参数：  10,20  –&gt;根据形式参数的需要传入的</li></ol><p>5)方法体：具体的业务逻辑代码<br>6) return 方法返回值;<br>方法如果有返回值的话： return+方法返回值，将返回值返回到方法的调用处<br>方法没有返回值的话：return可以省略不写了，并且方法的返回值类型为：void</p><p>public class TestMethod02{</p><pre><code>    public static void add(int num1,int num2)&#123;            int sum = 0;            sum += num1;            sum += num2;                System.out.println(sum);            //return;     &#125;    public static void main(String[] args)&#123;            //10+20:            //方法的调用：（用方法）            add(10,20);             //30+90:            add(30,90);            //50+48:            //System.out.println(add(50,48));//报错：TestMethod02.java:22: 错误: 此处不允许使用 &#39;空&#39; 类型    &#125;</code></pre><p>}</p><p>什么时候有返回值，什么时候没有返回值？ 看心情–》看需求</p><p>6.方法的定义需要注意什么？<br>1）形参列表要怎么写：定义几个参数，分别是什么类型的  —》不确定因素我们会当做方法的形参<br>2)  方法到底是否需要返回值 ，如果需要的话，返回值的类型是什么</p><p>7.方法的调用需要注意什么？<br>1）实际参数要怎么传入：传入几个参数，传入什么类型的<br>2） 方法是否有返回值需要接受</p><h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>问下列代码中两个数是否交换成功<br>public class TestM{<br>        public static void main(String[] args){<br>                int a=10;<br>                int b=20;<br>                System.out.println(“输出交换前的两个数：”+a+”—“+b);<br>                changeNum(a,b);<br>                System.out.println(“输出交换后的两个数：”+a+”—“+b);<br>        }<br>        public static void changeNum(int num1,int num2){<br>                int t;<br>                t=num1;<br>                num1=num2;<br>                num2=t;<br>        }<br>}<br>答：<br><img                       lazyload                     src="/images/loading.svg"                     data-src="/images/%E6%96%B9%E6%B3%951.png"                                     ></p><h2 id="方法的重载"><a href="#方法的重载" class="headerlink" title="方法的重载"></a>方法的重载</h2><h3 id="什么是方法的重载："><a href="#什么是方法的重载：" class="headerlink" title="什么是方法的重载："></a>什么是方法的重载：</h3><p>方法的重载是指一个类中可以定义多个方法名相同，但参数不同的方法。 调用时，会根据不同的参数自动匹配对应的方法。</p><p>注意本质：重载的方法，实际是完全不同的方法，只是名称相同而已！</p><h3 id="构成方法重载的条件："><a href="#构成方法重载的条件：" class="headerlink" title="构成方法重载的条件："></a>构成方法重载的条件：</h3><p>不同的含义：形参类型、形参个数、形参顺序不同<br>只有返回值不同不构成方法的重载<br>如：int a(String str){}与 void a(String str){}不构成方法重载<br>只有形参的名称不同，不构成方法的重载<br>如：int a(String str){}与int a(String s){}不构成方法重载</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>public class TestMethod05{<br>    public static void main(String[] args){<br>                //10+20:<br>                int sum = add(10,20);<br>                System.out.println(sum);</p><pre><code>            //20+40+80:            //System.out.println(add(add(20,40),80));            System.out.println(add(20,40,80));            //30+60+90+120:            //System.out.println(add(add(30,60),add(90,120)));            System.out.println(add(30,60,90,120));            //9.8+4.7:            //System.out.println(add(9.8,4.7));            System.out.println(add(9.8,4.7));    &#125;        //定义一个方法：两个数相加：两个int类型数据相加    public static int add(int num1,int num2)&#123;            return num1+num2;    &#125;        //定义一个方法：三个数相加：    public static int add(int num1,int num2,int num3)&#123;            return num1+num2+num3;    &#125;        //定义一个方法：四个数相加：    public static int add(int num1,int num2,int num3,int num4)&#123;            return num1+num2+num3+num4;    &#125;    //定义一个方法：两个数相加：两个double类型的数据相加    public static double add(double num1,double num2)&#123;            return num1+num2;    &#125;        </code></pre><p>}</p><h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>1.方法的重载：在同一个类中，方法名相同，形参列表不同的多个方法，构成了方法的重载。<br>2.方法的重载只跟：方法名和形参列表有关，与修饰符，返回值类型无关。<br>3.注意：形参列表不同指的是什么？<br>（1）个数不同<br>add()   add(int num1)   add(int num1,int num2)<br>（2）顺序不同<br>add(int num1,double num2)   add(double num1,int num2)<br>（3）类型不同<br>add(int num1)   add(double num1)</p><p>4.请问下面的方法是否构成了方法的重载？<br>(1)add(int a)  和  add(int b)   —&gt;不构成,相当于方法的重复定义<br>(2)public static int add(int a) 和  public static void add(int b)  —&gt;不构成</p><h2 id="扩充："><a href="#扩充：" class="headerlink" title="扩充："></a>扩充：</h2><p>public class TestMethod06{<br>    public static void main(String[] args){<br>                add(5);<br>                //级别：byte,short,char–&gt;int–&gt;long–&gt;float—&gt;double<br>        }</p><pre><code>    public static void add(double num1)&#123;            System.out.println(&quot;------2&quot;);    &#125;    public static void add(float num1)&#123;            System.out.println(&quot;------3&quot;);    &#125;    public static void add(long num1)&#123;            System.out.println(&quot;------4&quot;);    &#125;    /*    public static void add(int num1)&#123;            System.out.println(&quot;------1&quot;);    &#125;    */</code></pre><p>}</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;方法的定义、调用、重载&quot;&gt;&lt;a href=&quot;#方法的定义、调用、重载&quot; class=&quot;headerlink&quot; title=&quot;方法的定义、调用、重载&quot;&gt;&lt;/a&gt;方法的定义、调用、重载&lt;/h1&gt;&lt;h2 id=&quot;方法的定义和调用&quot;&gt;&lt;a href=&quot;#方法的定义和调用&quot;</summary>
+      
+    
+    
+    
+    <category term="Java" scheme="http://example.com/categories/Java/"/>
+    
+    
+    <category term="方法" scheme="http://example.com/tags/%E6%96%B9%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java中的流程控制</title>
-    <link href="http://example.com/2021/12/22/Java_%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/"/>
-    <id>http://example.com/2021/12/22/Java_%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</id>
+    <link href="http://example.com/2021/12/22/Java-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/"/>
+    <id>http://example.com/2021/12/22/Java-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</id>
     <published>2021-12-22T14:13:36.000Z</published>
     <updated>2021-12-22T14:40:04.543Z</updated>
     
@@ -42,8 +163,8 @@
   
   <entry>
     <title>Java_运算符</title>
-    <link href="http://example.com/2021/12/22/Java_%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
-    <id>http://example.com/2021/12/22/Java_%E8%BF%90%E7%AE%97%E7%AC%A6/</id>
+    <link href="http://example.com/2021/12/22/Java-%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
+    <id>http://example.com/2021/12/22/Java-%E8%BF%90%E7%AE%97%E7%AC%A6/</id>
     <published>2021-12-22T13:40:47.000Z</published>
     <updated>2021-12-22T14:58:12.514Z</updated>
     
@@ -66,8 +187,8 @@
   
   <entry>
     <title>数据类型</title>
-    <link href="http://example.com/2021/12/22/Java_%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
-    <id>http://example.com/2021/12/22/Java_%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</id>
+    <link href="http://example.com/2021/12/22/Java-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    <id>http://example.com/2021/12/22/Java-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</id>
     <published>2021-12-22T13:19:47.000Z</published>
     <updated>2021-12-22T14:54:08.690Z</updated>
     
@@ -90,8 +211,8 @@
   
   <entry>
     <title>Java核心机制及部署</title>
-    <link href="http://example.com/2021/12/22/Java_%E6%A0%B8%E5%BF%83/"/>
-    <id>http://example.com/2021/12/22/Java_%E6%A0%B8%E5%BF%83/</id>
+    <link href="http://example.com/2021/12/22/Java-%E6%A0%B8%E5%BF%83/"/>
+    <id>http://example.com/2021/12/22/Java-%E6%A0%B8%E5%BF%83/</id>
     <published>2021-12-22T09:49:41.000Z</published>
     <updated>2021-12-22T14:52:56.086Z</updated>
     
@@ -115,8 +236,8 @@
   
   <entry>
     <title>Java介绍</title>
-    <link href="http://example.com/2021/12/22/Java_%E5%8F%91%E5%B1%95%E5%8F%B2/"/>
-    <id>http://example.com/2021/12/22/Java_%E5%8F%91%E5%B1%95%E5%8F%B2/</id>
+    <link href="http://example.com/2021/12/22/Java-%E5%8F%91%E5%B1%95%E5%8F%B2/"/>
+    <id>http://example.com/2021/12/22/Java-%E5%8F%91%E5%B1%95%E5%8F%B2/</id>
     <published>2021-12-22T09:23:53.000Z</published>
     <updated>2021-12-22T14:43:22.004Z</updated>
     

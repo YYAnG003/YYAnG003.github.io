@@ -9,7 +9,7 @@
     
     <title>
         
-            博客简介 |
+            Java中的内存分析 |
         
         Abner&#39;s Blog
     </title>
@@ -171,7 +171,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">博客简介</span>
+            <span class="title-hover-animation">Java中的内存分析</span>
         </div>
 
         
@@ -190,9 +190,20 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2021-12-22 14:10:25</span>
-        <span class="mobile">2021-12-22 14:10</span>
+        <span class="pc">2021-12-23 19:34:49</span>
+        <span class="mobile">2021-12-23 19:34</span>
     </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Java/">Java</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
     
     
         <span class="article-tags article-meta-item">
@@ -200,7 +211,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/%E7%AE%80%E4%BB%8B/">简介</a>&nbsp;
+                        <a href="/tags/%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/">内存分析</a>&nbsp;
                     </li>
                 
             </ul>
@@ -210,7 +221,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>136 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.5k Words</span>
         </span>
     
     
@@ -227,8 +238,14 @@
         
 
         <div class="article-content markdown-body">
-            <p>本博客于大学开始制作，记录学习记录和学习过程遇到的问题和解决办法。<br>博客设有分类和标签搜索功能，方便大家查找内容。<br>如遇到问题，可在评论区留下你的问题和建议。<br>谢谢大家阅读。</p>
-<p>This blog was created at the university to record learning records and problems encountered in the learning process and solutions.<br>The blog is equipped with classification and tag search functions to make it easy for everyone to find content.<br>If you encounter problems, you can leave your questions and suggestions in the comment area.<br>Thank you all for reading.</p>
+            <h1 id="内存分析"><a href="#内存分析" class="headerlink" title="内存分析"></a>内存分析</h1><h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>this关键字 用法：<br>1.this可以修饰属性：<br>总结：当属性名字和形参发生重名的时候，或者  属性名字 和局部变量重名的时候，都会发生就近原则，所以如果我要是直接使用变量名字的话就指的是离的近的那个形参或者局部变量，这时候如果我想要表示属性的话，在前面要加上：this.修饰<br>如果不发生重名问题的话，实际上你要是访问属性也可以省略this.<br>{<br>public class Person {<br>    //属性<br>    int age;<br>    String name;<br>    double height;<br>    //空构造器<br>    public Person(){<br>    }<br>    //有参构造器<br>    public Person(int age,String name,double height){<br>        this.age = age;<br>        this.name = name;<br>        this.height = height;<br>    }<br>    //方法：<br>    public void eat(){<br>        int age = 10;<br>        System.out.println(age);//就近原则，age指的是离它近的age–》局部变量的age<br>        System.out.println(this.age);//这里指代的就是属性的age<br>        System.out.println(“我喜欢吃饭”);<br>    }<br>}<br>2.this修饰方法：<br>总结：在同一个类中，方法可以互相调用，this.可以省略不写。<br>{<br>public class Person {<br>    //属性<br>    int age;<br>    String name;<br>    double height;<br>    //空构造器<br>    public Person(){<br>    }<br>    //有参构造器<br>    public Person(int age,String name,double height){<br>        this.age = age;<br>        this.name = name;<br>        this.height = height;<br>    }<br>    //方法：<br>    /<em>public void eat(){<br>        int age = 10;<br>        System.out.println(age);//就近原则，age指的是离它近的age–》局部变量的age<br>        System.out.println(this.age);//这里指代的就是属性的age<br>        System.out.println(“我喜欢吃饭”);<br>    }</em>/<br>    public void play(){<br>        /<em>this.</em>/eat();<br>        System.out.println(“上网”);<br>        System.out.println(“洗澡”);<br>    }<br>    public void eat(){<br>        System.out.println(/<em>this.</em>/age);<br>        System.out.println(“吃饭”);<br>    }<br>}<br>3.this可以修饰构造器：<br>总结：同一个类中的构造器可以相互用this调用，注意：this修饰构造器必须放在第一行<br>{<br>    public class Person {<br>    //属性<br>    int age;<br>    String name;<br>    double height;<br>    //空构造器<br>    public Person(){<br>    }<br>    //有参构造器<br>    public Person(int age,String name,double height){<br>        this(age,name);<br>        this.height = height;<br>    }<br>    public Person(int age,String name){<br>        this(age);<br>        this.name = name;<br>    }<br>    public Person(int age){<br>        this.age = age;<br>    }<br>    //方法：<br>    /<em>public void eat(){<br>        int age = 10;<br>        System.out.println(age);//就近原则，age指的是离它近的age–》局部变量的age<br>        System.out.println(this.age);//这里指代的就是属性的age<br>        System.out.println(“我喜欢吃饭”);<br>    }</em>/<br>    public void play(){<br>        /<em>this.</em>/eat();<br>        System.out.println(“上网”);<br>        System.out.println(“洗澡”);<br>    }<br>    public void eat(){<br>        System.out.println(/<em>this.</em>/age);<br>        System.out.println(“吃饭”);<br>    }<br>}</p>
+<h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><p>static可以修饰：属性，方法，代码块，内部类。<br>1.static修饰属性<br>{<br>public class Test {<br>    //属性：<br>    int id;<br>    static int sid;<br>    //这是一个main方法，是程序的入口：<br>    public static void main(String[] args) {<br>        //创建一个Test类的具体的对象<br>        Test t1 = new Test();<br>        t1.id = 10;<br>        t1.sid = 10;<br>        Test t2 = new Test();<br>        t2.id = 20;<br>        t2.sid = 20;<br>        Test t3 = new Test();<br>        t3.id = 30;<br>        t3.sid = 30;<br>        //读取属性的值：<br>        System.out.println(t1.id);<br>        System.out.println(t2.id);<br>        System.out.println(t3.id);<br>        System.out.println(t1.sid);<br>        System.out.println(t2.sid);<br>        System.out.println(t3.sid);<br>    }<br>}<br>static修饰属性总结：<br>（1）在类加载的时候一起加载入方法区中的静态域中<br>（2）先于对象存在<br>（3）访问方式： 对象名.属性名    类名.属性名（推荐）<br>static修饰属性的应用场景：某些特定的数据想要在内存中共享，只有一块 –》这个情况下，就可以用static修饰的属性</p>
+<h2 id="static修饰方法"><a href="#static修饰方法" class="headerlink" title="static修饰方法"></a>static修饰方法</h2><p>{<br>public class Demo {<br>    int id;<br>    static int sid;<br>    public void a(){<br>        System.out.println(id);<br>        System.out.println(sid);<br>        System.out.println(“——a”);<br>    }<br>    //1.static和public都是修饰符，并列的没有先后顺序，先写谁后写谁都行<br>    static public void b(){<br>        //System.out.println(this.id);//4.在静态方法中不能使用this关键字<br>        //a();//3.在静态方法中不能访问非静态的方法<br>        //System.out.println(id);//2.在静态方法中不能访问非静态的属性<br>        System.out.println(sid);<br>        System.out.println(“——b”);<br>    }<br>    //这是一个main方法，是程序的入口：<br>    public static void main(String[] args) {<br>        //5.非静态的方法可以用对象名.方法名去调用<br>        Demo d = new Demo();<br>        d.a();<br>        //6.静态的方法可以用   对象名.方法名去调用  也可以 用  类名.方法名 （推荐）<br>        Demo.b();<br>        d.b();</p>
+<pre><code>&#125;
+</code></pre>
+<p>}</p>
+<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p>类的组成：属性，方法，构造器，代码块，内部类<br>代码块分类：普通块，构造块，静态块，同步块（多线程）<br>代码：<br>{<br>public class Test {<br>    //属性<br>    int a;<br>    static int sa;<br>    //方法<br>    public void a(){<br>        System.out.println(“—–a”);<br>        {<br>            //普通块限制了局部变量的作用范围<br>            System.out.println(“这是普通块”);<br>            System.out.println(“—-000000”);<br>            int num = 10;<br>            System.out.println(num);<br>        }<br>        //System.out.println(num);<br>        //if(){}<br>        //while(){}<br>    }<br>    public static void b(){<br>        System.out.println(“——b”);<br>    }<br>    //构造块<br>    {<br>        System.out.println(“——这是构造块”);<br>    }<br>    //静态块<br>    static{<br>        System.out.println(“—–这是静态块”);<br>        //在静态块中只能方法：静态属性，静态方法<br>        System.out.println(sa);<br>        b();<br>    }<br>    //构造器<br>    public Test(){<br>        System.out.println(“这是空构造器”);<br>    }<br>    public Test(int a){<br>        this.a = a;<br>    }<br>    //这是一个main方法，是程序的入口：<br>    public static void main(String[] args) {<br>        Test t = new Test();<br>        t.a();<br>        Test t2 = new Test();<br>        t2.a();<br>    }<br>}<br>总结：<br>代码块执行顺序：<br>最先执行静态块，只在类加载的时候执行一次，所以一般以后实战写项目：创建工厂，数据库的初始化信息都放入静态块。<br>一般用于执行一些全局性的初始化操作。<br>再执行构造块，（不常用）<br>再执行构造器，<br>再执行方法中的普通块</p>
+<h1 id="包"><a href="#包" class="headerlink" title="包"></a>包</h1><p>包的作用：<br>为了解决重名问题（实际上包对应的就是盘符上的目录），解决权限问题。<br>创建包<br>包名定义：<br>（1）名字全部小写<br>（2）中间用.隔开<br>（3）一般都是公司域名倒着写 ：  com.jd   com.msb<br>（4）加上模块名字：<br> com.jd.login    com.jd.register<br>（5）不能使用系统中的关键字：nul,con,com1—com9…..<br>（6）包声明的位置一般都在非注释性代码的第一行：<br>总结：<br>（1）使用不同包下的类要需要导包： import **.<em>.</em>;  例如：import java.util.Date;<br>（2）在导包以后，还想用其他包下同名的类，就必须要手动自己写所在的包。<br>（3）同一个包下的类想使用不需要导包，可以直接使用。<br>（4）在java.lang包下的类，可以直接使用无需导包：<br>（5）IDEA中导包快捷键：alt+enter<br>    可以自己设置自动导包<br>（6）可以直接导入*：</p>
 
         </div>
 
@@ -236,11 +253,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：博客简介</li>
+        <li>Post title：Java中的内存分析</li>
         <li>Post author：Abner</li>
-        <li>Create time：2021-12-22 14:10:25</li>
+        <li>Create time：2021-12-23 19:34:49</li>
         <li>
-            Post link：YYAnG003.github.io/2021/12/22/简介/
+            Post link：YYAnG003.github.io/2021/12/23/内存分析/
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
@@ -255,7 +272,7 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/%E7%AE%80%E4%BB%8B/">#简介</a>&nbsp;
+                        <a href="/tags/%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/">#内存分析</a>&nbsp;
                     </li>
                 
             </ul>
@@ -264,29 +281,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/12/22/Java-%E5%8F%91%E5%B1%95%E5%8F%B2/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">Java介绍</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/12/21/hello-world/"
+                           href="/2021/12/23/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Hello World</span>
+                                <span class="post-nav-title-item">面向对象</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -495,7 +497,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90"><span class="nav-number">1.</span> <span class="nav-text">内存分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#this"><span class="nav-number">1.1.</span> <span class="nav-text">this</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#static"><span class="nav-number">1.2.</span> <span class="nav-text">static</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#static%E4%BF%AE%E9%A5%B0%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.</span> <span class="nav-text">static修饰方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-number">1.4.</span> <span class="nav-text">代码块</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8C%85"><span class="nav-number">2.</span> <span class="nav-text">包</span></a></li></ol>
     </div>
 </div>
         </aside>
