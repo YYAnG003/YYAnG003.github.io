@@ -9,7 +9,7 @@
     
     <title>
         
-            About |
+            Archive: 2022 |
         
         Abner&#39;s Blog
     </title>
@@ -75,7 +75,7 @@
                         </li>
                     
                         <li class="menu-item">
-                            <a class=""
+                            <a class="active"
                                href="/archives"
                             >
                                 日志
@@ -99,7 +99,7 @@
                         </li>
                     
                         <li class="menu-item">
-                            <a class="active"
+                            <a class=""
                                href="/about"
                             >
                                 关于
@@ -133,7 +133,7 @@
                 </li>
             
                 <li class="drawer-menu-item flex-center">
-                    <a class=""
+                    <a class="active"
                        href="/archives">日志</a>
                 </li>
             
@@ -148,7 +148,7 @@
                 </li>
             
                 <li class="drawer-menu-item flex-center">
-                    <a class="active"
+                    <a class=""
                        href="/about">关于</a>
                 </li>
             
@@ -168,98 +168,139 @@
 
                 
                     <div class="fade-in-down-animation">
-    <div class="page-template-container">
+    <div class="archive-container ">
         
-        
-        <div class="page-template-content markdown-body">
-            
-                <h2 id="About-me"><a href="#About-me" class="headerlink" title="About me"></a>About me</h2><p>大家好，我是刘朝阳，出生于北京，毕业于大连海洋大学计算机科学与技术专业。精通JAVA各项技术，精通计算机组成原理还有数据结构，熟悉数据库的使用和SQL语句，有过制作聊天软件的项目经验。</p>
-
-            
-        </div>
-        <div class="page-template-comments">
-            
-                <div class="comments-container">
-    <div id="comment-anchor"></div>
-    <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;Comments</i>
-    </div>
+<div class="archive-list-container">
     
-
-        
-            
-    <div class="valine-container">
-        <script data-pjax
-                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
-        <div id="vcomments"></div>
-        <script data-pjax>
-            function loadValine() {
-                new Valine({
-                    el: '#vcomments',
-                    appId: '1148KCXAaglqxi6mYjmwiABd-gzGzoHsz',
-                    appKey: '1amqfX7KCeTGIi8nQFru33bS',
-                    meta: ['nick', 'mail', 'link'],
-                    avatar: 'wavatar',
-                    enableQQ: true,
-                    placeholder: '😜尽情吐槽吧～',
-                    lang: 'en'.toLowerCase()
-                });
-
-                function getAuthor(language) {
-                    switch (language) {
-                        case 'en':
-                            return 'Author';
-                        case 'zh-CN':
-                            return '博主';
-                        default:
-                            return 'Master';
-                    }
-                }
-
-                // Add "Author" identify
-                const getValineDomTimer = setInterval(() => {
-                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
-                    if (vcards.length > 0) {
-                        let author = 'Abner';
-
-                        if (author) {
-                            for (let vcard of vcards) {
-                                const vnick_dom = vcard.querySelector('.vhead .vnick');
-                                const vnick = vnick_dom.innerHTML;
-                                if (vnick === author) {
-                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
-                                }
-                            }
-                        }
-                        clearInterval(getValineDomTimer);
-                    } else {
-                        clearInterval(getValineDomTimer);
-                    }
-                }, 2000);
-            }
-
-            if ('true') {
-                const loadValineTimeout = setTimeout(() => {
-                    loadValine();
-                    clearTimeout(loadValineTimeout);
-                }, 1000);
-            } else {
-                window.addEventListener('DOMContentLoaded', loadValine);
-            }
-        </script>
-    </div>
-
-
-
-        
+        <section class="archive-item">
+            <div class="archive-item-header">
+                <span class="archive-year">2022</span>
+                <span class="archive-year-post-count">[3]</span>
+            </div>
+            <ul class="article-list">
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2022/03/07/Java%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/"
+                        >Java三大特性</a>
+                        <span class="article-date">03-07</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2022/03/07/final%E4%BF%AE%E9%A5%B0%E7%AC%A6/"
+                        >final修饰符</a>
+                        <span class="article-date">03-07</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2022/03/07/%E6%8A%BD%E8%B1%A1%E7%B1%BB/"
+                        >抽象类</a>
+                        <span class="article-date">03-07</span>
+                    </li>
+                
+            </ul>
+        </section>
+    
+        <section class="archive-item">
+            <div class="archive-item-header">
+                <span class="archive-year">2021</span>
+                <span class="archive-year-post-count">[12]</span>
+            </div>
+            <ul class="article-list">
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2021/12/23/%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/"
+                        >Java中的内存分析</a>
+                        <span class="article-date">12-23</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2021/12/23/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"
+                        >面向对象</a>
+                        <span class="article-date">12-23</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2021/12/23/IDEA/"
+                        >IDEA</a>
+                        <span class="article-date">12-23</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2021/12/23/Java-%E6%95%B0%E7%BB%84/"
+                        >Java中的数组</a>
+                        <span class="article-date">12-23</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2021/12/23/Java-%E6%96%B9%E6%B3%95/"
+                        >Java中的方法</a>
+                        <span class="article-date">12-23</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2021/12/22/Java-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/"
+                        >Java中的流程控制</a>
+                        <span class="article-date">12-22</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2021/12/22/Java-%E8%BF%90%E7%AE%97%E7%AC%A6/"
+                        >Java_运算符</a>
+                        <span class="article-date">12-22</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2021/12/22/Java-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"
+                        >数据类型</a>
+                        <span class="article-date">12-22</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2021/12/22/Java-%E6%A0%B8%E5%BF%83/"
+                        >Java核心机制及部署</a>
+                        <span class="article-date">12-22</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2021/12/22/Java-%E5%8F%91%E5%B1%95%E5%8F%B2/"
+                        >Java介绍</a>
+                        <span class="article-date">12-22</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2021/12/22/%E7%AE%80%E4%BB%8B/"
+                        >博客简介</a>
+                        <span class="article-date">12-22</span>
+                    </li>
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2021/12/21/hello-world/"
+                        >Hello World</a>
+                        <span class="article-date">12-21</span>
+                    </li>
+                
+            </ul>
+        </section>
     
 </div>
 
-            
-        </div>
     </div>
 </div>
-
 
                 
             </div>

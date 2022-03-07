@@ -9,7 +9,7 @@
     
     <title>
         
-            About |
+            final修饰符 |
         
         Abner&#39;s Blog
     </title>
@@ -99,7 +99,7 @@
                         </li>
                     
                         <li class="menu-item">
-                            <a class="active"
+                            <a class=""
                                href="/about"
                             >
                                 关于
@@ -148,7 +148,7 @@
                 </li>
             
                 <li class="drawer-menu-item flex-center">
-                    <a class="active"
+                    <a class=""
                        href="/about">关于</a>
                 </li>
             
@@ -168,17 +168,150 @@
 
                 
                     <div class="fade-in-down-animation">
-    <div class="page-template-container">
-        
-        
-        <div class="page-template-content markdown-body">
-            
-                <h2 id="About-me"><a href="#About-me" class="headerlink" title="About me"></a>About me</h2><p>大家好，我是刘朝阳，出生于北京，毕业于大连海洋大学计算机科学与技术专业。精通JAVA各项技术，精通计算机组成原理还有数据结构，熟悉数据库的使用和SQL语句，有过制作聊天软件的项目经验。</p>
+    <div class="article-content-container">
 
-            
+        <div class="article-title">
+            <span class="title-hover-animation">final修饰符</span>
         </div>
-        <div class="page-template-comments">
-            
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/%E5%A4%B4%E5%83%8F.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Abner</span>
+                        
+                            <span class="author-label">实习生</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-03-07 16:23:04</span>
+        <span class="mobile">2022-03-07 16:23</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Java/">Java</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E4%BF%AE%E9%A5%B0%E7%AC%A6/">修饰符</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>181 Words</span>
+        </span>
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="final"><a href="#final" class="headerlink" title="final"></a>final</h1><p>可以修饰变量<br>public class Test {<br>    public static void main(String[] args) {<br>        final int a = 10; //final 修饰变量，变量的值不可以改变，常量变为看了一个字符常量，规定常名字要大写。<br>        final Dog d =new Dog(); //地址值不变，对象的属性仍然可以改变<br>        final Dog d2 = new Dog();<br>        a(d2);<br>        b(d2);<br>    }<br>    public static void a(Dog d){<br>        d= new Dog(); // d的指向可以被改变<br>    }<br>    public static void b(final Dog d){<br>        d= new Dog(); // d被final修饰了，指向不能被改变<br>    }<br>}</p>
+<p>修饰方法<br>public class Person {<br>    final public void eat(){<br>        System.out.println(“吃饭”);<br>    }<br>}<br>class Student extends Person{<br>    public void eat(){ //方法不能被重写<br>        super.eat();<br>    }<br>}</p>
+<p>修饰类<br>public final class Person { //final修饰类，此类不能被继承<br>     public void eat(){<br>        System.out.println(“吃饭”);<br>    }<br>}</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：final修饰符</li>
+        <li>Post author：Abner</li>
+        <li>Create time：2022-03-07 16:23:04</li>
+        <li>
+            Post link：YYAnG003.github.io/2022/03/07/final修饰符/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E4%BF%AE%E9%A5%B0%E7%AC%A6/">#修饰符</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/03/07/Java%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Java三大特性</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/03/07/%E6%8A%BD%E8%B1%A1%E7%B1%BB/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">抽象类</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
@@ -255,8 +388,8 @@
     
 </div>
 
-            
-        </div>
+            </div>
+        
     </div>
 </div>
 
@@ -304,6 +437,27 @@
     </div>
 
     
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
 
     <div class="right-bottom-side-tools">
         <div class="side-tools-container">
@@ -349,6 +503,14 @@
 
     </div>
 
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#final"><span class="nav-number">1.</span> <span class="nav-text">final</span></a></li></ol>
+    </div>
+</div>
+        </aside>
     
 
     <div class="image-viewer-container">
@@ -422,6 +584,14 @@
 
 
 <div class="post-scripts pjax">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
     
 </div>
 

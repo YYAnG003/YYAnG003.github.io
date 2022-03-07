@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Abner">
+    
+    <title>
+        
+            Java三大特性 |
+        
+        Abner&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/%E5%A4%B4%E5%83%8F.png">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/头像.png","favicon":"/images/头像.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/背景.JPG","description":"不悔恨昨天，不惆怅明天。"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Abner&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                日志
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">日志</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Java三大特性</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/%E5%A4%B4%E5%83%8F.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Abner</span>
+                        
+                            <span class="author-label">实习生</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-03-07 16:24:01</span>
+        <span class="mobile">2022-03-07 16:24</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Java/">Java</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E7%89%B9%E6%80%A7/">特性</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>2.6k Words</span>
+        </span>
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="Java的三大特性"><a href="#Java的三大特性" class="headerlink" title="Java的三大特性"></a>Java的三大特性</h1><h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><h3 id="封装的概念"><a href="#封装的概念" class="headerlink" title="封装的概念"></a>封装的概念</h3><p>封装是把过程和数据包围起来，对数据的访问只能通过已定义的接口。面向对象计算始于这个基本概念，即现实世界可以被描绘成一系列完全自治、封装的对象，这些对象通过一个受保护的接口访问其他对象。封装是一种信息隐藏技术，在Java中通过关键字private,protected和public实现封装。<br>封装把对象的所有组成部分组合在一起，封装定义程序如何引用对象的数据，实际上使用方法将类的数据隐藏起来，控制用户对类的修改和访问数据的程度。适当的封装可以让程式码更容易理解和维护，也加强了程式码的安全性。<br>简单说封装将某些东西进行隐藏，然后提供相应的方式进行获取。</p>
+<h3 id="高内聚，低耦合"><a href="#高内聚，低耦合" class="headerlink" title="高内聚，低耦合"></a>高内聚，低耦合</h3><p>高内聚：类的内部数据操作细节自己完成，不允许外部干涉。<br>低耦合：仅对外暴露少量的方法用于使用。<br>隐藏对象内部的复杂性，只对外公开简单的接口。便于外界调用，从而提高系统的可扩展性、可维护性。</p>
+<h3 id="封装的好处"><a href="#封装的好处" class="headerlink" title="封装的好处"></a>封装的好处</h3><p>封装可以提高代码的安全性。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>public class Girl {<br>    private int age;</p>
+<pre><code>public int getage()&#123;
+    return age;
+</code></pre>
+<p>}</p>
+<pre><code>public void setage(int age) &#123;
+    if (age &gt;= 30) &#123;
+        this.age = 18;
+    &#125; else &#123;
+        this.age = age;
+    &#125;
+&#125;
+</code></pre>
+<p>}</p>
+<p>public class Test {<br>    public static void main(String[] args) {<br>    Girl g = new Girl();<br>    g.setage(31);<br>    System.out.println(g.getage());<br>    }<br>}</p>
+<p>上面的代码，对于属性age来说，加了修饰符private,这样外界对他的访问就受到了限制，现在我还想再加上其他的限制条件，但是在属性本身上没有办法再加了，所以我们通过定义方法进行限制条件的添加。<br>（1）将属性私有化，被private修饰<br>（2）提供了public修饰符的方法可以让别人来访问<br>（3）即使外界可以通过方法来访问属性，但是也不能随意访问，因为我们可以在方法中添加限制条件。<br>IDEA中可以用快捷键alt+insert来进行自动添加set，get方法。<br>注意：如果改了set，get方法的话，创建构造器后最好调用方法，不然容易出错。</p>
+<h2 id="继承-extends"><a href="#继承-extends" class="headerlink" title="继承 extends"></a>继承 extends</h2><h3 id="继承的概念"><a href="#继承的概念" class="headerlink" title="继承的概念"></a>继承的概念</h3><p>类是对对象的抽象，继承是对类的抽象。<br>举例：<br>学生类：<br>属性：姓名，年龄，身高，学生编号<br>方法：吃饭，睡觉，学习</p>
+<p>老师类：<br>属性：姓名，年龄，身高，教师编号<br>方法：吃饭，睡觉，教学</p>
+<p>员工类：<br>属性：姓名，年龄，身高，员工编号<br>方法：吃饭，睡觉，工作</p>
+<p>把共同的东西抽象为一个新的类：<br>人类：<br>属性：姓名，年龄，身高<br>方法：吃饭，睡觉<br>学生类，教师类，员工类都继承自人类</p>
+<p>写代码时候先定义人类</p>
+<p>人类： –&gt; 父类</p>
+<p>属性：姓名，年龄，身高<br>方法：吃饭，睡觉</p>
+<p>再定义： –&gt; 子类</p>
+<p>学生类：<br>属性：学生编号<br>方法：学习<br>教师类：<br>属性：教师编号<br>方法：教学<br>员工类：<br>属性：员工编号<br>方法：工作<br>子类继承自父类，这种继承关系，是在合理的范围中的抽取，抽取出子类父类的关系。</p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><p>public class Person {<br>    private int age;<br>    private String name;<br>    private double hight;</p>
+<pre><code>public int getAge() &#123;
+    return age;
+&#125;
+
+public void setAge(int age) &#123;
+    this.age = age;
+&#125;
+
+public String getName() &#123;
+    return name;
+&#125;
+
+public void setName(String name) &#123;
+    this.name = name;
+&#125;
+
+public double getHight() &#123;
+    return hight;
+&#125;
+
+public void setHight(double hight) &#123;
+    this.hight = hight;
+&#125;
+
+public void eat()&#123;
+
+&#125;
+public void sleep()&#123;
+
+&#125;
+</code></pre>
+<p>}</p>
+<p>public class Student extends Person{//子类Student 继承 父类<br>    private int sno;//学号</p>
+<pre><code>public int getSno() &#123;
+    return sno;
+&#125;
+
+public void setSno(int sno) &#123;
+    this.sno = sno;
+&#125;
+
+public void study()&#123;
+    System.out.println(&quot;学生可以学习&quot;);
+
+&#125;
+</code></pre>
+<p>}</p>
+<p>public class Test {<br>    public static void main(String[] args) {<br>    Student s1 = new Student();<br>    s1.setSno(1001);<br>    s1.setAge(15);<br>    s1.setHight(178.5);<br>    s1.setName(“李立”);<br>        System.out.println(“姓名：”+s1.getName()+”年龄：”+s1.getAge()+”身高为：”+s1.getHight()+”学号：”+s1.getSno());<br>    }<br>}<br>提高了代码的复用性，不用重复定义<br>注意：父类的private修饰的内容，子类不能直接调用，但是通过set，get方法可以间接的调用。</p>
+<h3 id="继承的好处"><a href="#继承的好处" class="headerlink" title="继承的好处"></a>继承的好处</h3><p>(1)提高了代码的复用性，不用重复定义<br>(2)便于代码的扩展<br>(3)为了以后多态的使用，是多态的前提。<br>注意：一个父类可以有多个子类，一个子类只能直接的继承于一个父类，但是继承具有传递性，可以间接的继承其他类。</p>
+<h2 id="权限修饰符"><a href="#权限修饰符" class="headerlink" title="权限修饰符"></a>权限修饰符</h2><p>private 私有的，只在当前类里有效<br>default 省略的，同一个类和包都可以访问<br>protected 同一个类，包和子类可以访问<br>public 所有的地方多可以访问<br>属性，方法：修饰符：四种都可以用<br>类：修饰符：可以用省略的或者public<br>一般属性用private，方法用public</p>
+<h2 id="方法的重写"><a href="#方法的重写" class="headerlink" title="方法的重写"></a>方法的重写</h2><p>发生在子类和父类中，当父类提供的方法不满意时，要对父类的方法进行重写。<br>格式要求：子类和父类的方法名，参数列表（个数，顺序，类型）必须一样</p>
+<h3 id="重载和重写的区别"><a href="#重载和重写的区别" class="headerlink" title="重载和重写的区别"></a>重载和重写的区别</h3><p>重载发生在同一个类中，方法名一样，形参列表不同的时候<br>重写发生在不同类，子类对父类的方法进行重写。<br>       位置        修饰符                  返回值           方法名       参数     抛出异常     方法体<br>重载    同类         无关                   无关           必须相同     必须不同     无关       不同<br>重写   子父类      父类的低于子类          父类的大于子类      必须相同     必须相同   小于等于     不同 </p>
+<h2 id="super修饰符"><a href="#super修饰符" class="headerlink" title="super修饰符"></a>super修饰符</h2><p>super指的是父类，通常情况下可以省略，当属性或者方法重复时，访问父类必须写super。和this用法类似。<br>super还可以修饰构造器，调用父类的构造器，一般省略不写。要放在第一行，所以super和this不能同时调用构造器。<br>IDEA中写构造器可以用快捷键，alt+insert</p>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><h3 id="泛化"><a href="#泛化" class="headerlink" title="泛化"></a>泛化</h3><p>先写子类，然后抽象出共同点为父类，叫泛化</p>
+<h3 id="多态-1"><a href="#多态-1" class="headerlink" title="多态"></a>多态</h3><p>多态即使多种状态，同一个行为，不同的子类表现出来的不同的形态。<br>多态指的就是同一个方法调用，然后用于对象不同会产生不同的行为。<br>好处：为了提高代码的扩展性，符合面向对象原则（开闭原则-扩展是开放的，修改是关闭的）。但是虽然扩展性没有达到最好，还有反射可以吧扩展性达到最好。<br>多态的三个要素：继承，重写，父类引用指向子类对象。</p>
+<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><p>public class Animal {<br>    public void shout(){<br>        System.out.println(“我是动物，我可以叫”);<br>    }<br>}<br>public class Cat extends Animal{<br>    public void shout(){<br>        System.out.println(“我是小猫，我可以喵喵叫”);<br>    }<br>    public void scratch(){<br>        System.out.println(“我是小猫，我可以挠人”);<br>    }<br>}<br>public class Dog extends Animal{<br>    public void shout(){<br>        System.out.println(“我是小狗，我可以叫”);<br>    }<br>    public  void guard(){<br>        System.out.println(“我是小狗，我可以保护主人”);<br>    }<br>}<br>public class Girl {<br>    public void play(Animal an){<br>        an.shout();<br>    }<br>}<br>public class Test {<br>    public static void main(String[] args) {<br>        Girl g = new Girl();<br>        Cat c = new Cat();<br>        Dog d = new Dog();<br>        Animal an = d;<br>        g.play(an);<br>    }<br>}<br>上面的代码中，是一种常见的应用场景，父类当方法的形参，传入的是具体的子类的对象，然后调用同一个方法，根据传入的子类的不同展现出来的效果也不同，构成了多态。</p>
+<h2 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h2><p>所有类都哦直接或间接的继承于Object。</p>
+<h3 id="toString-方法"><a href="#toString-方法" class="headerlink" title="toString()方法"></a>toString()方法</h3><p>输出对象名的时候其实调用了toString方法，只不过省略不写了。<br>System.out.print(s)==System.out.print(s.toString())。<br>作用是：<br>返回一个值：getClass().getName()+@+Integer.toHexString(hashCode()) ，比如com.msb.msb5.Student@1b6d3586，包名加类名加@哈希码的无无符号十六进制数<br>hashCode将对象在堆中的地址，进行哈希算法，返回一个码就是哈希码，然后传到Integer.toHexString方法中，返回一个十六进制的数对应的字符串。<br>具体过程：<br>对象在堆中分配了地址，将地址进行哈希操作，转成哈希码，再通过方法转为十六进制的字符串。<br>可以理解为返回一个地址，但是返回出的值的可读性不好，我们想知道对象里具体的内容，而不是十六进制的地址，所以我们对这个方法不满意，要对方法进行重写。<br>比如：<br>public String toString{<br>    retrun “这是一个Student对象，这个对象的名字是：”+name+”，年龄是：”+age+”，身高是：”+height;<br>}<br>基本上我们都要进行重写，可以用IDEA的快捷键：alt+insert然后选toString()。</p>
+<h3 id="equals-方法"><a href="#equals-方法" class="headerlink" title="equals()方法"></a>equals()方法</h3><p>boolean flag = p1.equals(p2);<br>作用：<br>比较两个对象是否一致。<br>== 对于基本数据类型来说，比较的是数值是否相当，对于引用数据类型来说，比较的是两者的地址是否相等。<br>equals方法是提供一个对对象的具体内容是否相等的一个方式，对象内容就是只属性，分类Object类就是==，没有什么具体用法，一般要对这个方法进行重写。<br>比如：<br>public boolean equals(Object obj){<br>    //要将obj转为Phone类型,Phone是自己写的类<br>    Phone other = (Phone)obj;<br>    if(this.getBrand()==other.getBrand()&amp;&amp;this.getPrice()==other.getPrice()){<br>        retrun ture;<br>    }else{<br>        retrun false;<br>    }<br>}<br>在其他类里调用重写的eqalus方法时候，可以用instanceof运算符判断新的类是否为旧类的实体对象，是的话返回true，不是的话返回false。<br>可以用IDEA的快捷键alt+insert，重写eqals方法。</p>
+<h2 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h2><p>定义一个static方法，通过类名直接调用，<br>返回值类型是父类类型，返回的可以是其任意子类类型，<br>传入一个字符串型的参数，工厂根据参数创建对应的子类产品。</p>
+<h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><p>public class PetStore { //动物工厂<br>    public static Animal getAnimal(String petName){ //传入宠物类型<br>    Animal an = null; //初始化an<br>    if(“猫”.equals(petName)){ //把传入的宠物子类类型赋值给父类<br>        an = new Cat();<br>    }<br>    if(“狗”.equals(petName)){<br>        an = new Dog();<br>    }<br>    return an;  //返回父类<br>    }<br>}</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：Java三大特性</li>
+        <li>Post author：Abner</li>
+        <li>Create time：2022-03-07 16:24:01</li>
+        <li>
+            Post link：YYAnG003.github.io/2022/03/07/Java三大特性/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E7%89%B9%E6%80%A7/">#特性</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/03/07/final%E4%BF%AE%E9%A5%B0%E7%AC%A6/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">final修饰符</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;Comments</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script data-pjax
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script data-pjax>
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: '1148KCXAaglqxi6mYjmwiABd-gzGzoHsz',
+                    appKey: '1amqfX7KCeTGIi8nQFru33bS',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '😜尽情吐槽吧～',
+                    lang: 'en'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'Abner';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('true') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2021</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Abner</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7"><span class="nav-number">1.</span> <span class="nav-text">Java的三大特性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%81%E8%A3%85"><span class="nav-number">1.1.</span> <span class="nav-text">封装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%81%E8%A3%85%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.1.</span> <span class="nav-text">封装的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E5%86%85%E8%81%9A%EF%BC%8C%E4%BD%8E%E8%80%A6%E5%90%88"><span class="nav-number">1.1.2.</span> <span class="nav-text">高内聚，低耦合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%81%E8%A3%85%E7%9A%84%E5%A5%BD%E5%A4%84"><span class="nav-number">1.1.3.</span> <span class="nav-text">封装的好处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">1.1.4.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF-extends"><span class="nav-number">1.2.</span> <span class="nav-text">继承 extends</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-number">1.2.1.</span> <span class="nav-text">继承的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF%E7%9A%84%E5%A5%BD%E5%A4%84"><span class="nav-number">1.2.3.</span> <span class="nav-text">继承的好处</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%83%E9%99%90%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.3.</span> <span class="nav-text">权限修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E5%86%99"><span class="nav-number">1.4.</span> <span class="nav-text">方法的重写</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E8%BD%BD%E5%92%8C%E9%87%8D%E5%86%99%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.4.1.</span> <span class="nav-text">重载和重写的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#super%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.5.</span> <span class="nav-text">super修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E6%80%81"><span class="nav-number">1.6.</span> <span class="nav-text">多态</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%9B%E5%8C%96"><span class="nav-number">1.6.1.</span> <span class="nav-text">泛化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E6%80%81-1"><span class="nav-number">1.6.2.</span> <span class="nav-text">多态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-2"><span class="nav-number">1.6.3.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object%E7%B1%BB"><span class="nav-number">1.7.</span> <span class="nav-text">Object类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#toString-%E6%96%B9%E6%B3%95"><span class="nav-number">1.7.1.</span> <span class="nav-text">toString()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#equals-%E6%96%B9%E6%B3%95"><span class="nav-number">1.7.2.</span> <span class="nav-text">equals()方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.8.</span> <span class="nav-text">简单工厂模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-3"><span class="nav-number">1.8.1.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

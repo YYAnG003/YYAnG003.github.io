@@ -9,7 +9,7 @@
     
     <title>
         
-            About |
+            抽象类 |
         
         Abner&#39;s Blog
     </title>
@@ -99,7 +99,7 @@
                         </li>
                     
                         <li class="menu-item">
-                            <a class="active"
+                            <a class=""
                                href="/about"
                             >
                                 关于
@@ -148,7 +148,7 @@
                 </li>
             
                 <li class="drawer-menu-item flex-center">
-                    <a class="active"
+                    <a class=""
                        href="/about">关于</a>
                 </li>
             
@@ -168,17 +168,157 @@
 
                 
                     <div class="fade-in-down-animation">
-    <div class="page-template-container">
-        
-        
-        <div class="page-template-content markdown-body">
-            
-                <h2 id="About-me"><a href="#About-me" class="headerlink" title="About me"></a>About me</h2><p>大家好，我是刘朝阳，出生于北京，毕业于大连海洋大学计算机科学与技术专业。精通JAVA各项技术，精通计算机组成原理还有数据结构，熟悉数据库的使用和SQL语句，有过制作聊天软件的项目经验。</p>
+    <div class="article-content-container">
 
-            
+        <div class="article-title">
+            <span class="title-hover-animation">抽象类</span>
         </div>
-        <div class="page-template-comments">
-            
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/%E5%A4%B4%E5%83%8F.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Abner</span>
+                        
+                            <span class="author-label">实习生</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-03-07 16:20:08</span>
+        <span class="mobile">2022-03-07 16:20</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Java/">Java</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E7%B1%BB/">类</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>566 Words</span>
+        </span>
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="抽象类和抽象方法"><a href="#抽象类和抽象方法" class="headerlink" title="抽象类和抽象方法"></a>抽象类和抽象方法</h1><h2 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h2><p>抽象类中可以定义0-n个抽象方法</p>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>在抽象类中定义抽象方法，目的是为了给子类提供一个通用的模板。子类可以在模板的基础上进行开发，西安重写父类的抽象方法，然后可以扩展子类自己的技能，抽象类设计避免了子类设计的随意性，通过抽象类，子类的设计变得更加严格，进行某种程度上的限制。使子类更加的通用。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>public abstract class Person {<br>    //一个类中如果有抽象方法，则这个类也要变成一个抽象类,一个抽象类中可以有0-n个抽象方法<br>    //在一个类中，会有一类方法，子类对这个方法非常满意，无需重写，直接使用<br>    public void eat(){<br>        System.out.println(“吃饭”);<br>    }<br>    //在一个类中，子类对这个方法永远不满意，会对这个方法进行重写<br>    public abstract void say();//一个方法去掉方法体，然后用abstract修饰，那么这个方法就变成了一个抽象方法<br>    public abstract void sleep();<br>}<br>//抽象类可以被其他类继承<br>//一个类继承一个抽象类，那么这个类可以变成抽象类<br>//一般子类不会加abstract修饰，一般让子类重写父类中的抽象方法<br>class Student extends Person{<br>    @Override<br>    public void say() {<br>        System.out.println(“我喜欢说话”);<br>    }</p>
+<pre><code>@Override //子类继承抽象类，就必须重写全部的抽象方法，子类如果没有重写父类的全部抽象方法，那么子类也可以变成一个抽象类
+public void sleep() &#123;
+    System.out.println(&quot;我喜欢睡觉&quot;);
+&#125;
+</code></pre>
+<p>}<br>class Demo{<br>    public static void main(String[] args) {<br>        //创建抽象类的对象–&gt;抽象类不可以创建对象<br>        //创建子类对象<br>        Student s = new Student();<br>        s.say();<br>        s.sleep();<br>    }<br>}</p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>1.抽象类中一定有构造器，构造器的作用是给子类初始化对象的时候要西安super调用父类的构造器<br>2.抽象方法不能被final修饰，因为抽象类设计的初衷就是给子类继承用的，要是被final修饰了，就不存在继承了，没有子类了</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：抽象类</li>
+        <li>Post author：Abner</li>
+        <li>Create time：2022-03-07 16:20:08</li>
+        <li>
+            Post link：YYAnG003.github.io/2022/03/07/抽象类/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E7%B1%BB/">#类</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/03/07/final%E4%BF%AE%E9%A5%B0%E7%AC%A6/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">final修饰符</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/12/23/%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Java中的内存分析</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
@@ -255,8 +395,8 @@
     
 </div>
 
-            
-        </div>
+            </div>
+        
     </div>
 </div>
 
@@ -304,6 +444,27 @@
     </div>
 
     
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
 
     <div class="right-bottom-side-tools">
         <div class="side-tools-container">
@@ -349,6 +510,14 @@
 
     </div>
 
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">抽象类和抽象方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB"><span class="nav-number">1.1.</span> <span class="nav-text">关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text">作用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">1.2.1.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F"><span class="nav-number">1.3.</span> <span class="nav-text">注意</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
     
 
     <div class="image-viewer-container">
@@ -422,6 +591,14 @@
 
 
 <div class="post-scripts pjax">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
     
 </div>
 
