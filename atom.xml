@@ -41,11 +41,11 @@
   </entry>
   
   <entry>
-    <title>Object</title>
-    <link href="http://example.com/2022/03/12/Object/"/>
-    <id>http://example.com/2022/03/12/Object/</id>
+    <title>Object类</title>
+    <link href="http://example.com/2022/03/12/Object%E7%B1%BB/"/>
+    <id>http://example.com/2022/03/12/Object%E7%B1%BB/</id>
     <published>2022-03-12T08:58:41.000Z</published>
-    <updated>2022-03-12T09:11:02.112Z</updated>
+    <updated>2022-03-13T09:06:16.596Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h1><h2 id="toString-方法"><a href="#toString-方法" class="headerlink" title="toString()方法"></a>toString()方法</h2><p>输出对象名的时候其实调用了toString方法，只不过省略不写了。<br>System.out.print(s)==System.out.print(s.toString())。<br>作用是：<br>返回一个值：getClass().getName()+@+Integer.toHexString(hashCode()) ，<br>比如com.msb.msb5.Student@1b6d3586，包名加类名加@哈希码的无无符号十六进制数<br>hashCode将对象在堆中的地址，进行哈希算法，返回一个码就是哈希码，然后传到Integer.toHexString方法中，返回一个十六进制的数对应的字符串。<br>具体过程：<br>对象在堆中分配了地址，将地址进行哈希操作，转成哈希码，再通过方法转为十六进制的字符串。<br>可以理解为返回一个地址，但是返回出的值的可读性不好，我们想知道对象里具体的内容，而不是十六进制的地址，所以我们对这个方法不满意，要对方法进行重写。<br>比如：<br>public String toString{<br>    retrun “这是一个Student对象，这个对象的名字是：”+name+”，年龄是：”+age+”，身高是：”+height;<br>}<br>基本上我们都要进行重写，可以用IDEA的快捷键：alt+insert然后选toString()。</p><h2 id="equals-方法"><a href="#equals-方法" class="headerlink" title="equals()方法"></a>equals()方法</h2><p>boolean flag = p1.equals(p2);<br>作用：<br>比较两个对象是否一致。<br>== 对于基本数据类型来说，比较的是数值是否相当，对于引用数据类型来说，比较的是两者的地址是否相等。<br>equals方法是提供一个对对象的具体内容是否相等的一个方式，对象内容就是只属性，分类Object类就是==，没有什么具体用法，一般要对这个方法进行重写。<br>比如：<br>public boolean equals(Object obj){<br>    //要将obj转为Phone类型,Phone是自己写的类<br>    Phone other = (Phone)obj;<br>    if(this.getBrand()==other.getBrand()&amp;&amp;this.getPrice()==other.getPrice()){<br>        retrun ture;<br>    }else{<br>        retrun false;<br>    }<br>}<br>在其他类里调用重写的eqalus方法时候，可以用instanceof运算符判断新的类是否为旧类的实体对象，是的话返回true，不是的话返回false。<br>可以用IDEA的快捷键alt+insert，重写eqals方法。</p>]]></content>
     
