@@ -9,7 +9,7 @@
     
     <title>
         
-            面向对象 |
+            Java中的异常 |
         
         Abner&#39;s Blog
     </title>
@@ -171,7 +171,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">面向对象</span>
+            <span class="title-hover-animation">Java中的异常</span>
         </div>
 
         
@@ -190,8 +190,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2021-12-23 18:56:58</span>
-        <span class="mobile">2021-12-23 18:56</span>
+        <span class="pc">2021-12-23 19:34:49</span>
+        <span class="mobile">2021-12-23 19:34</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -211,7 +211,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>&nbsp;
+                        <a href="/tags/%E5%BC%82%E5%B8%B8/">异常</a>&nbsp;
                     </li>
                 
             </ul>
@@ -238,20 +238,36 @@
         
 
         <div class="article-content markdown-body">
-            <h1 id="面向过程和面向对象的区别"><a href="#面向过程和面向对象的区别" class="headerlink" title="面向过程和面向对象的区别"></a>面向过程和面向对象的区别</h1><p>面向过程：当事件比较简单的时候，利用面向过程，注重的是事件的具体的步骤/过程，注重的是过程中的具体的行为，以函数为最小单位，考虑怎么做。<br>面向对象：注重找“参与者”,将功能封装进对象，强调具备了功能的对象，以类/对象为最小单位，考虑谁来做。<br>案例：<br>人把大象装进冰箱：<br>面向过程：<br>函数1：打开冰箱(){人站在冰箱前，打开冰箱，冰箱卡到30度角的时候，冰箱的灯打开了………}<br>函数2：储存大象(){大象先迈左腿，再迈右退，考虑冰箱能不能装下……}<br>函数3：关闭冰箱(){人站在冰箱前，关闭冰箱，冰箱开到30度角的时候，冰箱的灯关闭了……….}</p>
-<p>面向对象：<br>人{<br>打开(冰箱){<br>冰箱.打开();<br>}</p>
-<p>存储(大象){<br>        大象.进入();<br>}</p>
-<p>关闭(冰箱){<br>冰箱.关闭();<br>}<br>}</p>
-<p>冰箱{<br>打开（）{ 1.2.3.}<br> 关闭（）{}<br>}</p>
-<p>柜子{</p>
+            <h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><p>异常：程序运行中，发生了不正常的现象，阻止了程序的运行，称之为异常。</p>
+<h2 id="异常怎么看"><a href="#异常怎么看" class="headerlink" title="异常怎么看"></a>异常怎么看</h2><p>第一行代表出现的什么异常，最后一行是代码出错的位置，在哪个类第几行。</p>
+<h2 id="处理异常的方式"><a href="#处理异常的方式" class="headerlink" title="处理异常的方式"></a>处理异常的方式</h2><h3 id="通过if-else解决异常"><a href="#通过if-else解决异常" class="headerlink" title="通过if-else解决异常"></a>通过if-else解决异常</h3><p>比如：<br>if(sc.hasNextInt){ //如果输入的是一个int型类型</p>
+<p>}<br>优点：用法简单<br>缺点：代码臃肿，可读性差，业务代码和处理异常的代码混合在一起，需要花费大量时间维护代码，很难堵住所有漏洞</p>
+<h3 id="Java中的异常处理机制"><a href="#Java中的异常处理机制" class="headerlink" title="Java中的异常处理机制"></a>Java中的异常处理机制</h3><p>异常三连：（try-catch-finally）<br>try{<br>    System.out.printf(“正常代码”);<br>}catch(Exception ex){<br>    System.out.printf(“对不起，程序出现异常。”);<br>}<br>    System.out.printf(“异常后的代码可以正常运行”);<br>    原理：把可能出现异常的代码放入try中，然后将异常代码进行输出，被catch后面的（）中的异常对象接收，接收之后，执行catch后面的{}中的代码，然后后面的代码继续正常运行。<br>    try中没有异常，catch中代码不运行。<br>    try中有异常，catch进行捕获。<br>    如果catch中异常类型和你出的异常类型匹配的话，走catch中的代码，进行捕获。<br>    如果catch中异常类型和你出的异常类型不匹配的话，不走catch中的代码，则没有捕获成功，程序相当于出现了异常，中断了，则后续代码不执行。<br>    注意：如果try中出现异常，catch也捕获成功了，则try异常后面的代码不运行；try-catch后面的代码正常运行。<br>catch中的处理方式：<br>1.catch中什么都不写，空代码块<br>2.自定义输出内容，如：程序出现异常<br>3.调用toString方法，ex或者ex.toString()显示异常的类名（全限定路径）<br>4.用ex.getMessage()，显示异常描述的信息对应的字符串，如果没有显示null<br>5.用ex.printStackTrace(),显示异常的堆栈信息，就是将异常信息捕获后，在控制台显示出来，后面代码正常运行，比较常用<br>6.抛出异常，throw ex<br>在什么情况下，try-catch后面的代码不执行：throw抛出异常，catch中没有正常进行捕获，在try中遇到return<br>finally就是为了防止这种情况出现，让异常之后的代码必须正常运行，比如：<br>try{<br>    System.out.printf(“正常代码”);<br>}catch(Exception ex){<br>    System.out.printf(“对不起，程序出现异常。”);<br>}finally{<br>    System.out.printf(“finally中代码必须正常运行”);<br>}<br>异常三连的运行顺序：限制性finally，在执行return。<br>一般什么代码放在finally中：关闭数据库，关闭IO数据流，关闭socket资源<br>有一个代码可以让finally中代码不执行：System.exit(0);//终止当前的虚拟机执行</p>
+<h3 id="多重catch捕获异常"><a href="#多重catch捕获异常" class="headerlink" title="多重catch捕获异常"></a>多重catch捕获异常</h3><p>catch可以写多个，比如：</p>
+<p>try{<br>    System.out.printf(“正常代码”);<br>}catch(InputMismatchException ex){<br>    System.out.printf(“对不起，你录入的数据不是int型数据”);<br>}catch（ArithmeticException ex）{<br>    System.out.printf(“对不起，除数不能为0”);<br>}catch（Exception ex）{<br>    System.out.printf(“对不起，程序出现异常。”);<br>}<br>一旦执行了一条catch语句后，后面的catch则不执行，在安排catch顺序时，一般先写子类异常，后写父类异常。<br>在jdk1.7以后可以用或符号进行连接，如：<br>catch（ArithmeticException ex ｜ InputMismatchException ex）{</p>
 <p>}</p>
-<p>大象{<br>进入(冰箱){<br>}<br>}<br>面向过程 —&gt; 面向对象 , 其实就是由执行者 —&gt; 指挥者的 一个过渡</p>
-<h1 id="类和对象的关系"><a href="#类和对象的关系" class="headerlink" title="类和对象的关系"></a>类和对象的关系</h1><p>1.万事万物皆对象，身边所有的事物都是对象<br>2.对象：具体的事物，具体的实体，具体的实例，模板下具体的产品<br>  类：对对象向上抽取出像的部分，公共的部分，形成类，类是抽象的，是一个模板。<br>相当于类是有相同特征的对象的集合。<br>3.一般在写代码的时候先写类，然后在根据类创建对应的对象。</p>
-<h1 id="面向对象的三个阶段"><a href="#面向对象的三个阶段" class="headerlink" title="面向对象的三个阶段"></a>面向对象的三个阶段</h1><p>1.面向对象分析OOA  –  Object Oriented Analysis<br>对象：张三，王五，朱六，你，我<br>抽取出一个类—-》人类<br>类里面有什么：<br>动词–》动态特性–》方法<br>名词–》静态特性–》属性<br>2.面向对象设计OOD  –  Object Oriented Design<br>先有类，再有对象：<br>类：人类： Person<br>对象：zhangsan ，lisi，zhuliu<br>3.面向对象编程OOP  –  Object Oriented Programming</p>
-<h1 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h1><h2 id="创建类"><a href="#创建类" class="headerlink" title="创建类"></a>创建类</h2><p>1）属性（field 成员变量）<br>属性用于定义该类或该类对象包含的数据或者说静态特征。属性作用范围是整个类体。<br>属性定义格式：<br>[修饰符]  属性类型  属性名 = [默认值] ;</p>
-<p>（2）方法<br>方法用于定义该类或该类实例的行为特征和功能实现。方法是类和对象行为特征的抽象。方法很类似于面向过程中的函数。面向过程中，函数是最基本单位，整个程序由一个个函数调用组成。面向对象中，整个程序的基本单位是类，方法是从属于类和对象的。<br>方法定义格式：<br>[修饰符]  方法返回值类型  方法名(形参列表) {<br>        // n条语句<br>}<br>void代表没有返回值；方法的作用：重用代码，封装功能，便于修改。<br>代码：<br>public class Person {<br>    //名词—》属性—》成员变量—》放在类中方法外（注意：我们只把有需要的内容写到代码里，不相关的东西不要放在代码中）<br>    int age ;//年龄<br>    String name;//姓名<br>    double height;//身高<br>    double weight;//体重<br>    //动词—》方法<br>    //吃饭<br>    public void eat(){<br>        int num = 10;//局部变量：放在方法中<br>        System.out.println(“我喜欢吃饭”);<br>    }<br>    //睡觉：<br>    public void sleep(String address){<br>        System.out.println(“我在”+address+”睡觉”);<br>    }<br>    //自我介绍：<br>    public String introduce(){<br>        return “我的名字是：”+name+”，我的年龄是：”+age+”,我的身高是：”+height+”,我的体重是：”+weight;<br>    }<br>}</p>
-<h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><p>public class Test {//测试类<br>    //这是一个main方法，是程序的入口：<br>    public static void main(String[] args) {<br>        //创建一个人类的具体的对象/实例：<br>        //创建一个对象，对象的名字叫：zs<br>        //Person 属于 引用数据类型<br>        //第一次加载类的时候，会进行类的加载，初始化创建对象的时候，对象的属性没有给赋值，有默认的初始化的值。<br>        Person zs = new Person();<br>        zs.name = “张三”;<br>        zs.age = 19;<br>        zs.height = 180.4;<br>        zs.weight = 170.4;<br>        //再创建一个对象：<br>        //再次创建类的时候，就不会进行类的加载了，类的加载只在第一次需要的时候加载一次<br>        Person ls = new Person();<br>        ls.name = “李四”;<br>        ls.age = 18;<br>        ls.height = 170.6;<br>        ls.weight = 160.5;<br>        //对属性值进行读取：<br>        System.out.println(zs.name);<br>        System.out.println(ls.age);<br>        //对方法进行操作：<br>        //不同的对象，属性有自己的特有的值，但是方法都是调用类中通用的方法。<br>        //属性：各个对象的属性是独立的，<br>        //方法：各个对象的方法是共享的。<br>        zs.eat();<br>        ls.eat();<br>        zs.sleep(“教室”);<br>        /<em>String str = zs.introduce();<br>        System.out.println(str);</em>/<br>        System.out.println(zs.introduce());<br>    }<br>}</p>
-<h1 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h1><p>public class Test {<br>    //这是一个main方法，是程序的入口：<br>    public static void main(String[] args) {<br>        //创建一个Person类的具体的对象/实例/实体：<br>        /*<br>        创建对象的过程：<br>        1.第一次遇到Person的时候，进行类的加载（只加载一次）<br>        2.创建对象，为这个对象在堆中开辟空间<br>        3.为对象进行属性的初始化动作<br>        new关键字实际上是在调用一个方法，这个方法叫构造方法（构造器）<br>        调用构造器的时候，如果你的类中没有写构造器，那么系统会默认给你分配一个构造器，只是我们看不到罢了。<br>        可以自己显式 的将构造器编写出来：<br>        构造器的格式：<br>        [修饰符] 构造器的名字(){<br>        }<br>        构造器和方法的区别：<br>        1.没有方法的返回值类型<br>        2.方法体内部不能有return语句<br>        3.构造器的名字很特殊，必须跟类名一样<br>        构造器的作用：不是为了创建对象，因为在调用构造器之前，这个对象就已经创建好了，并且属性有默认的初始化的值。<br>        调用构造器的目的是给属性进行赋值操作的。<br>        注意：我们一般不会在空构造器中进行初始化操作，因为那样的话每个对象的属性就一样了。<br>        实际上，我们只要保证空构造器的存在就可以了，里面的东西不用写<br>         */<br>        Person p = new Person();<br>        System.out.println(p.age);<br>        System.out.println(p.name);<br>        System.out.println(p.height);<br>        Person p2 = new Person();<br>        System.out.println(p2.age);<br>        System.out.println(p2.name);<br>        System.out.println(p2.height);<br>    }<br>}</p>
+<h2 id="异常的分层，层次结构"><a href="#异常的分层，层次结构" class="headerlink" title="异常的分层，层次结构"></a>异常的分层，层次结构</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E5%BC%82%E5%B8%B8%E5%88%86%E5%B1%82.png"
+                     
+                ><br>运行时异常：<br>public class Test5 {<br>    //这是一个main方法，是程序的入口：<br>    public static void main(String[] args) {<br>        //运行时异常：<br>        int[] arr = {1,2,3};<br>        System.out.println(arr.length);<br>        /<em>int[] arr2 = null;<br>        System.out.println(arr2.length);</em>/<br>        System.out.println(arr[10]);<br>    }<br>}<br>检查异常：<br>处理方式1：try-catch嵌套try-catch<br>public class Test6 {<br>    //这是一个main方法，是程序的入口：<br>    public static void main(String[] args) {<br>        //检查异常：<br>        try {<br>            try {<br>                Class.forName(“com.msb.test01.Test”).newInstance();<br>            } catch (InstantiationException e) {<br>                e.printStackTrace();<br>            } catch (IllegalAccessException e) {<br>                e.printStackTrace();<br>            }<br>        } catch (ClassNotFoundException e) {<br>            e.printStackTrace();<br>        }<br>    }<br>}<br>处理方式2：多重catch<br>public class Test6 {<br>    //这是一个main方法，是程序的入口：<br>    public static void main(String[] args) {<br>        //检查异常：<br>        try {<br>            Class.forName(“com.msb.test01.Test”).newInstance();<br>        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {<br>            e.printStackTrace();<br>        }<br>    }<br>}<br>处理方式3：throws<br>public class Test6 {<br>    //这是一个main方法，是程序的入口：<br>    public static void main(String[] args) throws ClassNotFoundException, IllegalAccessException, InstantiationException {<br>        //检查异常：<br>        Class.forName(“com.msb.test01.Test”).newInstance();<br>    }<br>}</p>
+<h1 id="异常分层总结"><a href="#异常分层总结" class="headerlink" title="异常分层总结"></a>异常分层总结</h1><p>！<a href="/images/%E5%BC%82%E5%B8%B8%E6%80%BB.png"></a></p>
+<h1 id="throw和throws"><a href="#throw和throws" class="headerlink" title="throw和throws"></a>throw和throws</h1><p>throw和throws的区别：<br>（1）位置不同：<br>throw：方法内部<br>throws: 方法的签名处，方法的声明处</p>
+<p>（2）内容不同：<br>throw+异常对象（检查异常，运行时异常）<br>throws+异常的类型（可以多个类型，用，拼接）</p>
+<p>（3）作用不同：<br>throw：异常出现的源头，制造异常。<br>throws:在方法的声明处，告诉方法的调用者，这个方法中可能会出现我声明的这些异常。然后调用者对这个异常进行处理：<br>要么自己处理要么再继续向外抛出异常<br>代码：<br>public class Test7 {<br>    //这是一个main方法，是程序的入口：<br>    public static void main(String[] args) throws Exception {<br>        //实现一个功能：两个数相除，当除数为0的时候，程序出现异常。<br>        /<em>try {<br>            devide();<br>        } catch (Exception e) {<br>            e.printStackTrace();<br>        }</em>/<br>        devide();<br>    }<br>    public static void devide() throws Exception {<br>        Scanner sc = new Scanner(System.in);<br>        System.out.println(“请录入第一个数：”);<br>        int num1 = sc.nextInt();<br>        System.out.println(“请录入第二个数：”);<br>        int num2 = sc.nextInt();<br>        if(num2 == 0 ){//除数为0 ，制造异常。<br>            //制造运行时异常：<br>            /<em>throw new RuntimeException();</em>/<br>            //制造检查异常：<br>            /<em>try {<br>                throw new Exception();<br>            } catch (Exception e) {<br>                e.printStackTrace();<br>            }</em>/<br>            throw new Exception();<br>        }else{<br>            System.out.println(“商：”+num1/num2);<br>        }<br>    }<br>}</p>
+<h1 id="重载和重写异常的区别"><a href="#重载和重写异常的区别" class="headerlink" title="重载和重写异常的区别"></a>重载和重写异常的区别</h1><p>！<a href="/images/%E9%87%8D%E5%86%99%E5%BC%82%E5%B8%B8.png"></a><br>1.重载：<br>public class Demo {<br>    public void a() throws Exception{<br>    }<br>    public void a(int age) throws ArithmeticException{<br>    }<br>}<br>2.重写<br>public class Person{<br>    public void eat()throws RuntimeException{<br>        System.out.printf(“父类方法”);<br>    }<br>}<br>public class Student extends Person{<br>    public void eat()throws Exception{<br>        System.out.printf(“子类方法”);<br>    }<br>}<br>子类应该&lt;=父类</p>
+<h1 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h1><p>自定义的异常可以继承：运行时异常<br>public class MyException extends RuntimeException {</p>
+<pre><code>static final long serialVersionUID = -70348971907L;
+
+public MyException()&#123;
+&#125;
+public MyException(String msg)&#123;
+    super(msg);
+&#125;
+</code></pre>
+<p>}</p>
+<p>也可以继承检查异常：<br>public class MyException extends Exception {<br>    static final long serialVersionUID = -70348971907L;<br>    public MyException(){<br>    }<br>    public MyException(String msg){<br>        super(msg);<br>    }<br>}<br>如果继承的是运行时异常，那么在使用的时候无需额外处理<br>如果继承的是检查异常，那么使用的时候需要try-catch捕获或者throws向上抛</p>
 
         </div>
 
@@ -259,11 +275,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：面向对象</li>
+        <li>Post title：Java中的异常</li>
         <li>Post author：Abner</li>
-        <li>Create time：2021-12-23 18:56:58</li>
+        <li>Create time：2021-12-23 19:34:49</li>
         <li>
-            Post link：YYAnG003.github.io/2021/12/23/面向对象/
+            Post link：YYAnG003.github.io/2021/12/23/异常/
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
@@ -278,7 +294,7 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">#面向对象</a>&nbsp;
+                        <a href="/tags/%E5%BC%82%E5%B8%B8/">#异常</a>&nbsp;
                     </li>
                 
             </ul>
@@ -290,13 +306,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2021/12/23/%E5%B8%B8%E7%94%A8%E7%B1%BB/"
+                           href="/2021/12/23/%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Java中的常用类</span>
+                                <span class="post-nav-title-item">Java中的内存分析</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -306,10 +322,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/12/23/IDEA/"
+                           href="/2021/12/23/%E5%B8%B8%E7%94%A8%E7%B1%BB/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">IDEA</span>
+                                <span class="post-nav-title-item">Java中的常用类</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -518,7 +534,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E5%92%8C%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.</span> <span class="nav-text">面向过程和面向对象的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">2.</span> <span class="nav-text">类和对象的关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5"><span class="nav-number">3.</span> <span class="nav-text">面向对象的三个阶段</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA"><span class="nav-number">4.</span> <span class="nav-text">创建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%B1%BB"><span class="nav-number">4.1.</span> <span class="nav-text">创建类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1"><span class="nav-number">4.2.</span> <span class="nav-text">创建对象</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E5%99%A8"><span class="nav-number">5.</span> <span class="nav-text">构造器</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8"><span class="nav-number">1.</span> <span class="nav-text">异常</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E6%80%8E%E4%B9%88%E7%9C%8B"><span class="nav-number">1.1.</span> <span class="nav-text">异常怎么看</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E5%BC%82%E5%B8%B8%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">处理异常的方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87if-else%E8%A7%A3%E5%86%B3%E5%BC%82%E5%B8%B8"><span class="nav-number">1.2.1.</span> <span class="nav-text">通过if-else解决异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java%E4%B8%AD%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6"><span class="nav-number">1.2.2.</span> <span class="nav-text">Java中的异常处理机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E9%87%8Dcatch%E6%8D%95%E8%8E%B7%E5%BC%82%E5%B8%B8"><span class="nav-number">1.2.3.</span> <span class="nav-text">多重catch捕获异常</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E7%9A%84%E5%88%86%E5%B1%82%EF%BC%8C%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="nav-number">1.3.</span> <span class="nav-text">异常的分层，层次结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E5%88%86%E5%B1%82%E6%80%BB%E7%BB%93"><span class="nav-number">2.</span> <span class="nav-text">异常分层总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#throw%E5%92%8Cthrows"><span class="nav-number">3.</span> <span class="nav-text">throw和throws</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%87%8D%E8%BD%BD%E5%92%8C%E9%87%8D%E5%86%99%E5%BC%82%E5%B8%B8%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">4.</span> <span class="nav-text">重载和重写异常的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8"><span class="nav-number">5.</span> <span class="nav-text">自定义异常</span></a></li></ol>
     </div>
 </div>
         </aside>

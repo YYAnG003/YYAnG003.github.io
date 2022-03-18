@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Abner">
+    
+    <title>
+        
+            Java中的常用类 |
+        
+        Abner&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/%E5%A4%B4%E5%83%8F.png">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/头像.png","favicon":"/images/头像.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/背景.JPG","description":"不悔恨昨天，不惆怅明天。"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Abner&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                日志
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">日志</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Java中的常用类</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/%E5%A4%B4%E5%83%8F.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Abner</span>
+                        
+                            <span class="author-label">实习生</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2021-12-23 19:34:49</span>
+        <span class="mobile">2021-12-23 19:34</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Java/">Java</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E5%B8%B8%E7%94%A8%E7%B1%BB/">常用类</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>4.2k Words</span>
+        </span>
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h1><ol>
+<li><p>什么是包装类：<br>以前定义变量，经常使用基本数据类型，<br>对于基本数据类型来说，它就是一个数，加点属性，加点方法，加点构造器，<br>将基本数据类型对应进行了一个封装，产生了一个新的类，—》包装类。<br>int,byte…..—&gt;基本数据类型<br>包装类—&gt;引用数据类型</p>
+</li>
+<li><p>对应关系：<br>基本数据类型          对应的包装类                继承关系<br>byte                          Byte                           —》Number—》Object<br>short                         Short                         —》Number—》Object<br>int                             Integer                      —》Number—》Object<br>long                          Long                          —》Number—》Object<br>float                          Float                          —》Number—》Object<br>double                      Double                      —》Number—》Object<br>char                          Character                  Object<br>boolean                    Boolean                    Object</p>
+</li>
+<li><p>已经有基本数据类型了，为什么要封装为包装类？<br>（1）java语言 面向对象的语言，最擅长的操作各种各样的类。<br>（2）以前学习装数据的—》数组，int[]  String[]  double[]   Student[]<br>  以后学习的装数据的—》集合，有一个特点，只能装引用数据类型的数据</p>
+</li>
+</ol>
+<p>4.不是有了包装类以后就不用基本数据类型。</p>
+<h1 id="日期相关类"><a href="#日期相关类" class="headerlink" title="日期相关类"></a>日期相关类</h1><h2 id="java-util-Date"><a href="#java-util-Date" class="headerlink" title="java.util.Date"></a>java.util.Date</h2><p>public class Test {<br>    //这是一个main方法，是程序的入口：<br>    public static void main(String[] args) {<br>        //java.util.Date:<br>        Date d = new Date();<br>        System.out.println(d);<br>        System.out.println(d.toString());<br>        System.out.println(d.toGMTString());//过期方法，过时方法，废弃方法。<br>        System.out.println(d.toLocaleString());<br>        System.out.println(d.getYear());//120+1900=2020<br>        System.out.println(d.getMonth());//5 :返回的值在 0 和 11 之间，值 0 表示 1 月。<br>        //返回自 1970 年 1 月 1 日 00:00:00 GMT 以来此 Date 对象表示的毫秒数。<br>        System.out.println(d.getTime());//1592055964263<br>        System.out.println(System.currentTimeMillis());<br>        /*<br>        （1）疑问：以后获取时间差用：getTime()还是currentTimeMillis()<br>        答案：currentTimeMillis()–》因为这个方法是静态的，可以类名.方法名直接调用<br>        （2）public static native long currentTimeMillis();<br>        本地方法<br>        为什么没有方法体？因为这个方法的具体实现不是通过java写的。<br>        （3）这个方法的作用：<br>        一般会去衡量一些算法所用的时间<br>         */<br>        long startTime = System.currentTimeMillis();<br>        for (int i = 0; i &lt; 100000; i++) {<br>            System.out.println(i);<br>        }<br>        long endTime = System.currentTimeMillis();<br>        System.out.println(endTime-startTime);<br>    }<br>}</p>
+<h2 id="java-sql-Date"><a href="#java-sql-Date" class="headerlink" title="java.sql.Date"></a>java.sql.Date</h2><p>public class Test02 {<br>    //这是一个main方法，是程序的入口：<br>    public static void main(String[] args) {<br>        //java.sql.Date:<br>        Date d = new Date(1592055964263L);<br>        System.out.println(d);<br>        /*<br>        (1)java.sql.Date和java.util.Date的区别：<br>        java.util.Date：年月日  时分秒<br>        java.sql.Date：年月日<br>        (2)java.sql.Date和java.util.Date的联系：<br>        java.sql.Date(子类) extends java.util.Date （父类）<br>         <em>/<br>        //java.sql.Date和java.util.Date相互转换：<br>        //【1】util—&gt;sql:<br>        java.util.Date date = new Date(1592055964263L);//创建util.Date的对象<br>        //方式1：向下转型<br>        Date date1 = (Date) date;<br>        /</em><br>        父类：Animal 子类：Dog<br>        Animal an = new Dog();<br>        Dog d = (Dog)an;<br>         */<br>        //方式2：利用构造器<br>        Date date2 = new Date(date.getTime());<br>        //【2】sql–&gt;util:<br>        java.util.Date date3 = d;<br>        //[3]String—&gt;sql.Date:<br>        Date date4 =  Date.valueOf(“2019-3-8”);<br>    }<br>}</p>
+<h2 id="String—》java-util-Date-类型转换"><a href="#String—》java-util-Date-类型转换" class="headerlink" title="String—》java.util.Date 类型转换"></a>String—》java.util.Date 类型转换</h2><p>分解：<br>（1）String—&gt;java.sql.Date<br>（2）java.sql.Date—&gt;java.util.Date<br>public class Test04 {<br>    //这是一个main方法，是程序的入口：<br>    public static void main(String[] args) {<br>        //（1）String—&gt;java.sql.Date<br>        java.sql.Date date = java.sql.Date.valueOf(“2015-9-24”);<br>        //（2）java.sql.Date—&gt;java.util.Date<br>        java.util.Date date2 = date;<br>        System.out.println(date2.toString());<br>    }<br>}<br>上面的代码有局限性，字符串的格式只能是年-月-日拼接的形式，换成其它类型，就会出现异常：</p>
+<p>【2】引入新的类：SimpleDateFormat</p>
+<p>package com.msb.test02;<br>import java.text.DateFormat;<br>import java.text.ParseException;<br>import java.text.SimpleDateFormat;<br>import java.util.Date;<br>/**</p>
+<ul>
+<li>@Auther: msb-zhaoss</li>
+<li>/<br>public class Test05 {<br>  //这是一个main方法，是程序的入口：<br>  public static void main(String[] args) {<pre><code>  //日期转换：
+  //SimpleDateFormat(子类) extends DateFormat（父类是一个抽象类）
+  //格式化的标准已经定义好了：
+  DateFormat df = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
+  //String---&gt;Date
+  try &#123;
+      Date d = df.parse(&quot;2019-4-6 12:23:54&quot;);
+      System.out.println(d);
+  &#125; catch (ParseException e) &#123;
+      e.printStackTrace();
+  &#125;
+  //Date---&gt;String
+  String format = df.format(new Date());
+  System.out.println(format);
+  Date date = new Date();
+  System.out.println(date.toString());
+  System.out.println(date.toGMTString());
+  System.out.println(date.toLocaleString());
+</code></pre>
+  }<br>}<br>日期格式：<br>！<a href="/images/%E6%97%A5%E6%9C%9F%E7%B1%BB.png"></a><h2 id="Calender"><a href="#Calender" class="headerlink" title="Calender"></a>Calender</h2>import java.util.Calendar;<br>import java.util.GregorianCalendar;<br>public class Test06 {<br>  //这是一个main方法，是程序的入口：<br>  public static void main(String[] args) {<pre><code>  //Calendar是一个抽象类，不可以直接创建对象
+  //GregorianCalendar()子类 extends Calendar（父类是一个抽象类）
+  Calendar cal = new GregorianCalendar();
+  Calendar cal2 = Calendar.getInstance();
+  System.out.println(cal);
+  //常用的方法：
+  // get方法，传入参数：Calendar中定义的常量
+  System.out.println(cal.get(Calendar.YEAR));
+  System.out.println(cal.get(Calendar.MONTH));
+  System.out.println(cal.get(Calendar.DATE));
+  System.out.println(cal.get(Calendar.DAY_OF_WEEK));
+  System.out.println(cal.getActualMaximum(Calendar.DATE));//获取当月日期的最大天数
+  System.out.println(cal.getActualMinimum(Calendar.DATE));//获取当月日期的最小天数
+  // set方法：可以改变Calendar中的内容
+  cal.set(Calendar.YEAR,1990);
+  cal.set(Calendar.MONTH,3);
+  cal.set(Calendar.DATE,16);
+  System.out.println(cal);
+  //String---&gt;Calendar:
+  //分解：
+  //String---&gt;java.sql.Date:
+  java.sql.Date date = java.sql.Date.valueOf(&quot;2020-4-5&quot;);
+  //java.sql.Date--&gt;Calendar:
+  cal.setTime(date);
+  System.out.println(cal);
+</code></pre>
+  }<br>}<h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E6%97%A5%E6%9C%9F%E7%BB%83%E4%B9%A0.png"
+                     
+                ><br>import java.util.Calendar;<br>import java.util.Scanner;<br>public class Test08 {<br>  //这是一个main方法，是程序的入口：<br>  public static void main(String[] args) {<pre><code>  //录入日期的String：
+  Scanner sc = new Scanner(System.in);
+  System.out.print(&quot;请输入你想要查看的日期：（提示：请按照例如2012-5-6的格式书写）&quot;);
+  String strDate = sc.next();
+  /*System.out.println(strDate);*/
+  //String---&gt;Calendar:
+  //String--&gt;Date:
+  java.sql.Date date = java.sql.Date.valueOf(strDate);
+  //Date---&gt;Calendar:
+  Calendar cal = Calendar.getInstance();
+  cal.setTime(date);
+  //后续操作：
+  //星期提示：
+  System.out.println(&quot;日\t一\t二\t三\t四\t五\t六\t&quot;);
+  //获取本月的最大天数：
+  int maxDay = cal.getActualMaximum(Calendar.DATE);
+  //获取当前日期中的日：
+  int nowDay = cal.get(Calendar.DATE);
+  //将日期调为本月的1号：
+  cal.set(Calendar.DATE,1);
+  //获取这个一号是本周的第几天：
+  int num = cal.get(Calendar.DAY_OF_WEEK);
+  /*System.out.println(num);*/
+  //前面空出来的天数为：
+  int day = num - 1;
+  //引入一个计数器：
+  int count = 0;//计数器最开始值为0
+  //在日期前将空格打印出来：
+  for (int i = 1; i &lt;= day; i++) &#123;
+      System.out.print(&quot;\t&quot;);
+  &#125;
+  //空出来的日子也要放入计数器：
+  count = count + day;
+  //遍历：从1号开始到maxDay号进行遍历：
+  for (int i = 1; i &lt;= maxDay ; i++) &#123;
+      if(i == nowDay)&#123;//如果遍历的i和当前日子一样的话，后面多拼一个*
+          System.out.print(i+&quot;*&quot;+&quot;\t&quot;);
+      &#125;else&#123;
+          System.out.print(i+&quot;\t&quot;);
+      &#125;
+      count++;//每在控制台输出一个数字，计数器做加1操作
+      if(count%7 == 0)&#123;//当计数器的个数是7的倍数的时候，就换行操作
+          System.out.println();
+      &#125;
+  &#125;
+</code></pre>
+  }<br>}<h2 id="JDK1-8新增的日期API"><a href="#JDK1-8新增的日期API" class="headerlink" title="JDK1.8新增的日期API"></a>JDK1.8新增的日期API</h2>JDK1.0中使用java.util.Date类  –》第一批日期时间API</li>
+</ul>
+<p>JDK1.1引入Calendar类   –》第二批日期时间API<br>缺陷：<br>可变性 : 像日期和时间这样的类应该是不可变的。<br>偏移性 : Date中 的年份是从1900开始的，而月份都从0开始。<br>格式化 : 格式化只对Date有用，Calendar则不行。</p>
+<p>JDK1.8新增日期时间API –》第三批日期时间API</p>
+<ol>
+<li>java.time.LocalDate;</li>
+<li>java.time.LocalDateTime;</li>
+<li>java.time.LocalTime<br>public class Test09 {<br> //这是一个main方法，是程序的入口：<br> public static void main(String[] args) {<pre><code> //1.完成实例化：
+ //方法1：now()--获取当前的日期，时间，日期+时间
+ LocalDate localDate = LocalDate.now();
+ System.out.println(localDate);
+ LocalTime localTime = LocalTime.now();
+ System.out.println(localTime);
+ LocalDateTime localDateTime = LocalDateTime.now();
+ System.out.println(localDateTime);
+ //方法2：of()--设置指定的日期，时间，日期+时间
+ LocalDate of = LocalDate.of(2010, 5, 6);
+ System.out.println(of);
+ LocalTime of1 = LocalTime.of(12, 35, 56);
+ System.out.println(of1);
+ LocalDateTime of2 = LocalDateTime.of(1890, 12, 23, 13, 24, 15);
+ System.out.println(of2);
+ //LocalDate,LocalTime用的不如LocalDateTime多
+ //下面讲解用LocalDateTime：
+ //一些列常用的get***
+ System.out.println(localDateTime.getYear());//2020
+ System.out.println(localDateTime.getMonth());//JUNE
+ System.out.println(localDateTime.getMonthValue());//6
+ System.out.println(localDateTime.getDayOfMonth());//14
+ System.out.println(localDateTime.getDayOfWeek());//SUNDAY
+ System.out.println(localDateTime.getHour());//22
+ System.out.println(localDateTime.getMinute());//22
+ System.out.println(localDateTime.getSecond());//6
+ //不是set方法，叫with
+ //体会：不可变性
+ LocalDateTime localDateTime2 = localDateTime.withMonth(8);
+ System.out.println(localDateTime);
+ System.out.println(localDateTime2);
+ //提供了加减的操作：
+ //加：
+ LocalDateTime localDateTime1 = localDateTime.plusMonths(4);
+ System.out.println(localDateTime);
+ System.out.println(localDateTime1);
+ //减：
+ LocalDateTime localDateTime3 = localDateTime.minusMonths(5);
+ System.out.println(localDateTime);
+ System.out.println(localDateTime3);
+</code></pre>
+ }<br>}</li>
+<li>java.time.format.DateTimeFormatter;</li>
+<li>java.time.format.FormatStyle;<br>public class Test10 {<br> //这是一个main方法，是程序的入口：<br> public static void main(String[] args) {<pre><code> //格式化类：DateTimeFormatter
+ //方式一:预定义的标准格式。如: ISO_LOCAL_DATE_TIME;ISO_LOCAL_DATE;IS0_LOCAL_TIME
+ DateTimeFormatter df1 = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
+ //df1就可以帮我们完成LocalDateTime和String之间的相互转换：
+ //LocalDateTime--&gt;String:
+ LocalDateTime now = LocalDateTime.now();
+ String str = df1.format(now);
+ System.out.println(str);//2020-06-15T15:02:51.29
+ //String---&gt;LocalDateTime
+ TemporalAccessor parse = df1.parse(&quot;2020-06-15T15:02:51.29&quot;);
+ System.out.println(parse);
+ //方式二:本地化相关的格式。如: oflocalizedDateTime()
+ //参数：FormatStyle.LONG / FormatStyle.MEDIUM / FormatStyle.SHORT
+ //FormatStyle.LONG :2020年6月15日 下午03时17分13秒
+ //FormatStyle.MEDIUM: 2020-6-15 15:17:42
+ //FormatStyle.SHORT:20-6-15 下午3:18
+ DateTimeFormatter df2 = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT);
+ //LocalDateTime--&gt;String:
+ LocalDateTime now1 = LocalDateTime.now();
+ String str2 = df2.format(now1);
+ System.out.println(str2);
+ //String---&gt;LocalDateTime
+ TemporalAccessor parse1 = df2.parse(&quot;20-6-15 下午3:18&quot;);
+ System.out.println(parse1);
+ //方式三: 自定义的格式。如: ofPattern( &quot;yyyy-MM-dd hh:mm:ss&quot;) ---》重点，以后常用
+ DateTimeFormatter df3 = DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd hh:mm:ss&quot;);
+ //LocalDateTime--&gt;String:
+ LocalDateTime now2 = LocalDateTime.now();
+ String format = df3.format(now2);
+ System.out.println(format);//2020-06-15 03:22:03
+ //String---&gt;LocalDateTime
+ TemporalAccessor parse2 = df3.parse(&quot;2020-06-15 03:22:03&quot;);
+ System.out.println(parse2);
+</code></pre>
+ }<br>}<h1 id="Math类"><a href="#Math类" class="headerlink" title="Math类"></a>Math类</h1></li>
+<li>直接使用，无需导包：</li>
+<li>final修饰类，这个类不能被继承：</li>
+<li>构造器私有化，不能创建Math类的对象：<br>不能：<br>Math m = new Math();</li>
+<li>Math内部的所有的属性，方法都被static修饰：类名.直接调用，无需创建对象：</li>
+<li>常用方法：</li>
+</ol>
+<p>package com.msb.test03;<br>public class Test01 {<br>    //这是一个main方法，是程序的入口：<br>    public static void main(String[] args) {<br>        //常用属性：<br>        System.out.println(Math.PI);<br>        //常用方法：<br>        System.out.println(“随机数：”+Math.random());//[0.0,1.0)<br>        System.out.println(“绝对值：”+Math.abs(-80));<br>        System.out.println(“向上取值：”+Math.ceil(9.1));<br>        System.out.println(“向下取值：”+Math.floor(9.9));<br>        System.out.println(“四舍五入：”+Math.round(3.5));<br>        System.out.println(“取大的那个值：”+Math.max(3, 6));<br>        System.out.println(“取小的那个值：”+Math.min(3, 6));<br>    }<br>}<br>6. 静态导入：</p>
+<p>package com.msb.test03;<br>//静态导入：<br>import static java.lang.Math.*;<br>public class Test01 {<br>    //这是一个main方法，是程序的入口：<br>    public static void main(String[] args) {<br>        //常用属性：<br>        System.out.println(PI);<br>        //常用方法：<br>        System.out.println(“随机数：”+random());//[0.0,1.0)<br>        System.out.println(“绝对值：”+abs(-80));<br>        System.out.println(“向上取值：”+ceil(9.1));<br>        System.out.println(“向下取值：”+floor(9.9));<br>        System.out.println(“四舍五入：”+round(3.5));<br>        System.out.println(“取大的那个值：”+max(3, 6));<br>        System.out.println(“取小的那个值：”+min(3, 6));<br>    }<br>    //如果跟Math中方法重复了，那么会优先走本类中的方法（就近原则）<br>    public static int random(){<br>        return 100;<br>    }<br>}</p>
+<h1 id="Random类"><a href="#Random类" class="headerlink" title="Random类"></a>Random类</h1><p>import java.util.Random;<br>public class Test02 {<br>    //这是一个main方法，是程序的入口：<br>    public static void main(String[] args) {<br>        //返回带正号的 double 值，该值大于等于 0.0 且小于 1.0。<br>        System.out.println(“随机数：”+Math.random());<br>        //学习Random类<br>        //（1）利用带参数的构造器创建对象：<br>        Random r1 = new Random(System.currentTimeMillis());<br>        int i = r1.nextInt();<br>        System.out.println(i);<br>        //（2）利用空参构造器创建对象：<br>        Random r2 = new Random();//表面是在调用无参数构造器，实际底层还是调用了带参构造器<br>        System.out.println(r2.nextInt(10));//在 0（包括）和指定值（不包括）之间均匀分布的 int 值。<br>        System.out.println(r2.nextDouble());//在 0.0 和 1.0 之间均匀分布的 double 值。<br>    }<br>}<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/random.png"
+                     
+                ></p>
+<h1 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h1><p>1.直接使用，无需导包：<br>2.String str = “abc”;<br>“abc”就是String类下的一个具体的对象<br>3.字符串是不可变的：？？？？<br>4.这个String类不可以被继承，不能有子类：<br>5.String底层是一个char类型的数组</p>
+<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><ol>
+<li>构造器：底层就是给对象底层的value数组进行赋值操作。</li>
+</ol>
+<p> //通过构造器来创建对象：<br>        String s1 = new String();<br>        String s2 = new String(“abc”);<br>        String s3 = new String(new char[]{‘a’,’b’,’c’});<br>2. 常用方法：<br>String s4 = “abc”;<br>        System.out.println(“字符串的长度为：”+s4.length());<br>        String s5 = new SZtring(“abc”);<br>        System.out.println(“字符串是否为空：”+s5.isEmpty());<br>        System.out.println(“获取字符串的下标对应的字符为：”+s5.charAt(1));</p>
+<p>equals:</p>
+<pre><code>    String s6 = new String(&quot;abc&quot;);
+    String s7 = new String(&quot;abc&quot;);
+    System.out.println(s6.equals(s7));
+</code></pre>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/equals.png"
+                     
+                ></p>
+<p>String类实现了Comparable，里面有一个抽象方法叫compareTo，所以String中一定要对这个方法进行重写：4</p>
+<p>String s8 = new String(“abc”);<br>        String s9 = new String(“abc”);<br>        System.out.println(s8.compareTo(s9));<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/comparable.png"
+                     
+                ></p>
+<ol start="3">
+<li>字符串的截取：<pre><code> String s10 = &quot;abcdefhijk&quot;;
+ System.out.println(s10.substring(3));
+ System.out.println(s10.substring(3, 6));//[3,6)
+ //字符串的合并/拼接操作：
+ System.out.println(s10.concat(&quot;pppp&quot;));
+ //字符串中的字符的替换：
+ String s11 = &quot;abcdeahija&quot;;
+ System.out.println(s11.replace(&#39;a&#39;, &#39;u&#39;));
+ //按照指定的字符串进行分裂为数组的形式：
+ String s12 = &quot;a-b-c-d-e-f&quot;;
+ String[] strs = s12.split(&quot;-&quot;);
+ System.out.println(Arrays.toString(strs));
+ //转大小写的方法：
+ String s13 = &quot;abc&quot;;
+ System.out.println(s13.toUpperCase());
+ System.out.println(s13.toUpperCase().toLowerCase());
+ //去除收尾空格：
+ String s14 = &quot;    a  b  c    &quot;;
+ System.out.println(s14.trim());
+ //toString()
+ String s15 = &quot;abc&quot;;
+ System.out.println(s15.toString());
+ //转换为String类型：
+</code></pre>
+<h1 id="StringBuilder类"><a href="#StringBuilder类" class="headerlink" title="StringBuilder类"></a>StringBuilder类</h1><h2 id="StringBuilder类-1"><a href="#StringBuilder类-1" class="headerlink" title="StringBuilder类"></a>StringBuilder类</h2></li>
+<li>字符串的分类：<br>（1）不可变字符串：String<br>（2）可变字符串：StringBuilder，StringBuffer</li>
+</ol>
+<p>疑问：<br>（1）可变不可变？？<br>（2）本节课重点：StringBuilder   —–》√<br>（3）StringBuilder和StringBuffer区别  ？？</p>
+<ol start="2">
+<li><p>StringBuilder底层：非常重要的两个属性：<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/StringBuilder%E5%BA%95%E5%B1%82.png"
+                     
+                ></p>
+</li>
+<li><p>对应内存分析：<br>package com.msb.test05;<br>public class Test01 {<br> //这是一个main方法，是程序的入口：<br> public static void main(String[] args) {</p>
+<pre><code> //创建StringBuilder的对象：
+ StringBuilder sb3 = new StringBuilder();
+ //表面上调用StringBuilder的空构造器，实际底层是对value数组进行初始化，长度为16
+ StringBuilder sb2 = new StringBuilder(3);
+ //表面上调用StringBuilder的有参构造器，传入一个int类型的数，实际底层就是对value数组进行初始化，长度为你传入的数字
+ StringBuilder sb = new StringBuilder(&quot;abc&quot;);
+ System.out.println(sb.append(&quot;def&quot;).append(&quot;aaaaaaaa&quot;).append(&quot;bbb&quot;).append(&quot;ooooooo&quot;).toString());;//链式调用方式：return this
+</code></pre>
+<p> }<br>}<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/StringBuilder.png"
+                     
+                ></p>
+<h2 id="解释可变和不可变字符串"><a href="#解释可变和不可变字符串" class="headerlink" title="解释可变和不可变字符串"></a>解释可变和不可变字符串</h2></li>
+<li><p>String—》不可变<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/StringBuilder%E5%8F%AF%E5%8F%98.png"
+                     
+                ></p>
+</li>
+<li><p>StringBuilder—》可变<br>可变，在StringBuilder这个对象的地址不变的情况下，想把“abc”变成“abcdef”是可能的，直接追加即可<br>public class Test02 {<br> //这是一个main方法，是程序的入口：<br> public static void main(String[] args) {</p>
+<pre><code> StringBuilder sb = new StringBuilder();
+ System.out.println(sb.append(&quot;abc&quot;)==sb.append(&quot;def&quot;));//true
+</code></pre>
+<p> }<br>}</p>
+<h2 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h2></li>
+<li><p>StringBuilder常用方法：<br>package com.msb.test05;<br>public class Test03 {<br> //这是一个main方法，是程序的入口：<br> public static void main(String[] args) {</p>
+<pre><code> StringBuilder sb=new StringBuilder(&quot;nihaojavawodeshijie&quot;);
+ //增
+ sb.append(&quot;这是梦想&quot;);
+ System.out.println(sb);//nihaojavawodeshijie这是梦想
+ //删
+ sb.delete(3, 6);//删除位置在[3,6)上的字符
+ System.out.println(sb);//nihavawodeshijie这是梦想
+ sb.deleteCharAt(16);//删除位置在16上的字符
+ System.out.println(sb);//nihavawodeshijie是梦想
+ //改--&gt;插入
+ StringBuilder sb1=new StringBuilder(&quot;$23445980947&quot;);
+ sb1.insert(3, &quot;,&quot;);//在下标为3的位置上插入 ,
+ System.out.println(sb1);
+ StringBuilder sb2=new StringBuilder(&quot;$2你好吗5980947&quot;);
+ //改--&gt;替换
+ sb2.replace(3, 5, &quot;我好累&quot;);//在下标[3,5)位置上插入字符串
+ System.out.println(sb2);
+ sb.setCharAt(3, &#39;!&#39;);
+ System.out.println(sb);
+ //查
+ StringBuilder sb3=new StringBuilder(&quot;asdfa&quot;);
+ for (int i = 0; i &lt; sb3.length(); i++) &#123;
+     System.out.print(sb3.charAt(i)+&quot;\t&quot;);
+ &#125;
+ System.out.println();
+ //截取
+ String str=sb3.substring(2,4);//截取[2,4)返回的是一个新的String，对StringBuilder没有影响
+ System.out.println(str);
+ System.out.println(sb3);
+</code></pre>
+<p> }<br>}</p>
+</li>
+<li><p>StringBuffer常用方法：<br>public class Test03 {<br> //这是一个main方法，是程序的入口：<br> public static void main(String[] args) {</p>
+<pre><code> StringBuffer sb=new StringBuffer(&quot;nihaojavawodeshijie&quot;);
+ //增
+ sb.append(&quot;这是梦想&quot;);
+ System.out.println(sb);//nihaojavawodeshijie这是梦想
+ //删
+ sb.delete(3, 6);//删除位置在[3,6)上的字符
+ System.out.println(sb);//nihavawodeshijie这是梦想
+ sb.deleteCharAt(16);//删除位置在16上的字符
+ System.out.println(sb);//nihavawodeshijie是梦想
+ //改--&gt;插入
+ StringBuilder sb1=new StringBuilder(&quot;$23445980947&quot;);
+ sb1.insert(3, &quot;,&quot;);//在下标为3的位置上插入 ,
+ System.out.println(sb1);
+ StringBuilder sb2=new StringBuilder(&quot;$2你好吗5980947&quot;);
+ //改--&gt;替换
+ sb2.replace(3, 5, &quot;我好累&quot;);//在下标[3,5)位置上插入字符串
+ System.out.println(sb2);
+ sb.setCharAt(3, &#39;!&#39;);
+ System.out.println(sb);
+ //查
+ StringBuilder sb3=new StringBuilder(&quot;asdfa&quot;);
+ for (int i = 0; i &lt; sb3.length(); i++) &#123;
+     System.out.print(sb3.charAt(i)+&quot;\t&quot;);
+ &#125;
+ System.out.println();
+ //截取
+ String str=sb3.substring(2,4);//截取[2,4)返回的是一个新的String，对StringBuilder没有影响
+ System.out.println(str);
+ System.out.println(sb3);
+</code></pre>
+<p> }<br>}</p>
+<h1 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h1><p>String、StringBuffer、StringBuilder区别与联系</p>
+</li>
+<li><p>String类是不可变类，即一旦一个String对象被创建后，包含在这个对象中的字符序列是不可改变的，直至这个对象销毁。</p>
+</li>
+<li><p>StringBuffer类则代表一个字符序列可变的字符串，可以通过append、insert、reverse、setChartAt、setLength等方法改变其内容。一旦生成了最终的字符串，调用toString方法将其转变为String</p>
+</li>
+<li><p>JDK1.5新增了一个StringBuilder类，与StringBuffer相似，构造方法和方法基本相同。不同是StringBuffer是线程安全的，而StringBuilder是线程不安全的，所以性能略高。通常情况下，创建一个内容可变的字符串，应该优先考虑使用StringBuilder</p>
+</li>
+</ol>
+<p>    StringBuilder:JDK1.5开始  效率高   线程不安全</p>
+<p>    StringBuffer:JDK1.0开始   效率低    线程安全</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：Java中的常用类</li>
+        <li>Post author：Abner</li>
+        <li>Create time：2021-12-23 19:34:49</li>
+        <li>
+            Post link：YYAnG003.github.io/2021/12/23/常用类/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E5%B8%B8%E7%94%A8%E7%B1%BB/">#常用类</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/12/23/%E5%BC%82%E5%B8%B8/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Java中的异常</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/12/23/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">面向对象</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;Comments</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script data-pjax
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script data-pjax>
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: '1148KCXAaglqxi6mYjmwiABd-gzGzoHsz',
+                    appKey: '1amqfX7KCeTGIi8nQFru33bS',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '😜尽情吐槽吧～',
+                    lang: 'en'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'Abner';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('true') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2021</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Abner</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8C%85%E8%A3%85%E7%B1%BB"><span class="nav-number">1.</span> <span class="nav-text">包装类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%97%A5%E6%9C%9F%E7%9B%B8%E5%85%B3%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">日期相关类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#java-util-Date"><span class="nav-number">2.1.</span> <span class="nav-text">java.util.Date</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-sql-Date"><span class="nav-number">2.2.</span> <span class="nav-text">java.sql.Date</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String%E2%80%94%E3%80%8Bjava-util-Date-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">2.3.</span> <span class="nav-text">String—》java.util.Date 类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Calender"><span class="nav-number">2.4.</span> <span class="nav-text">Calender</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0"><span class="nav-number">2.4.1.</span> <span class="nav-text">练习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDK1-8%E6%96%B0%E5%A2%9E%E7%9A%84%E6%97%A5%E6%9C%9FAPI"><span class="nav-number">2.5.</span> <span class="nav-text">JDK1.8新增的日期API</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Math%E7%B1%BB"><span class="nav-number">3.</span> <span class="nav-text">Math类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Random%E7%B1%BB"><span class="nav-number">4.</span> <span class="nav-text">Random类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#String%E7%B1%BB"><span class="nav-number">5.</span> <span class="nav-text">String类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">5.1.</span> <span class="nav-text">常用方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#StringBuilder%E7%B1%BB"><span class="nav-number">6.</span> <span class="nav-text">StringBuilder类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#StringBuilder%E7%B1%BB-1"><span class="nav-number">6.1.</span> <span class="nav-text">StringBuilder类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A%E5%8F%AF%E5%8F%98%E5%92%8C%E4%B8%8D%E5%8F%AF%E5%8F%98%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">6.2.</span> <span class="nav-text">解释可变和不可变字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95-1"><span class="nav-number">6.3.</span> <span class="nav-text">常用方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="nav-number">7.</span> <span class="nav-text">面试题</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
